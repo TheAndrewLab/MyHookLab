@@ -1,0 +1,64 @@
+---
+// Footer.astro
+---
+
+<footer class="border-t border-subtle bg-canvas py-16 sm:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-10 pb-12 border-b border-subtle">
+      
+      <!-- Brand & Tagline -->
+      <div class="space-y-3">
+        <a href="#hero" class="flex items-center gap-2.5 group">
+          <div class="w-9 h-9 rounded-xl bg-surface-1 border border-subtle flex items-center justify-center text-main transition-transform duration-300 group-hover:scale-105 shadow-2xs">
+            <svg class="w-5 h-5 text-[#ff4500]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="15" cy="5" r="1.75" fill="currentColor" stroke="none" />
+              <path d="M15 6.75v7.25a4.5 4.5 0 0 1-9 0 2.25 2.25 0 0 1 2.25-2.25c1.2 0 1.75 0.75 1.75 1.75" />
+            </svg>
+          </div>
+          <div class="flex items-baseline">
+            <span class="text-xl font-bold tracking-tight text-main font-['Poppins',sans-serif]">
+              My
+            </span>
+            <span class="font-['Playfair_Display',serif] italic font-black text-2xl tracking-tight text-[#ff4500] px-0.5">
+              Hook
+            </span>
+            <span class="text-xl font-bold tracking-tight text-main font-['Poppins',sans-serif]">
+              Lab
+            </span>
+          </div>
+        </a>
+        <p class="text-sm font-medium text-muted tracking-wide">
+          "Make Them Stop. Make Them Notice."
+        </p>
+      </div>
+
+      <!-- Footer Navigation Links with Animated Underlines -->
+      <nav class="flex flex-wrap items-center gap-6 sm:gap-8 text-sm font-semibold text-muted">
+        <a href="#hero" class="relative group py-1 hover:text-main transition-colors">
+          <span>Home</span>
+          <span class="absolute bottom-0 left-0 w-full h-[2px] bg-[#ff4500] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+        </a>
+        <a href="#what-we-do" class="relative group py-1 hover:text-main transition-colors">
+          <span>What We Do</span>
+          <span class="absolute bottom-0 left-0 w-full h-[2px] bg-[#ff4500] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+        </a>
+        <a href="#process" class="relative group py-1 hover:text-main transition-colors">
+          <span>Our Process</span>
+          <span class="absolute bottom-0 left-0 w-full h-[2px] bg-[#ff4500] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+        </a>
+        <a href="#contact" class="relative group py-1 hover:text-main transition-colors">
+          <span>Contact</span>
+          <span class="absolute bottom-0 left-0 w-full h-[2px] bg-[#ff4500] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+        </a>
+      </nav>
+
+    </div>
+
+    <!-- Copyright & Lab Philosophy -->
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-dim">
+      <p>© {new Date().getFullYear()} MyHookLab. All rights reserved.</p>
+      <p class="font-mono">Attention is the first step toward curiosity, interest, and action.</p>
+    </div>
+  </div>
+</footer>
+

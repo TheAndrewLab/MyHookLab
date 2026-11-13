@@ -1,0 +1,420 @@
+---
+// Hero.astro
+---
+
+<section id="hero" class="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
+  <!-- Subtle Lab Grid Background -->
+  <div class="absolute inset-0 -z-10 pointer-events-none opacity-[0.03] dark:opacity-[0.04]">
+    <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="lab-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+          <path d="M 48 0 L 0 0 0 48" fill="none" stroke="currentColor" stroke-width="1" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#lab-grid)" />
+    </svg>
+  </div>
+
+  <!-- Ambient Glow Behind Hero -->
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[550px] h-[300px] sm:h-[420px] bg-[#ff4500]/5 dark:bg-[#ff4500]/10 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+      
+      <!-- Left Column: High-Impact Typography & CTAs -->
+      <div class="lg:col-span-7 flex flex-col justify-center text-left">
+        
+        <!-- Lab Badge -->
+        <div class="inline-flex items-center gap-2 self-start px-3 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-surface-1 border border-subtle text-muted mb-6 shadow-2xs">
+          <span class="w-2 h-2 rounded-full bg-[#ff4500] animate-ping"></span>
+          <span>Attention Engineering Lab</span>
+          <span class="text-dim">/</span>
+          <span class="text-[#ff4500]">0.4s Window</span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-main leading-[1.1] mb-6 font-['Poppins',sans-serif]">
+          In a World Full of Noise, Be the <span class="relative inline-block text-[#ff4500] font-black">
+            HOOK
+            <svg class="absolute -bottom-1 left-0 w-full h-2 text-[#ff4500]/40" viewBox="0 0 100 10" preserveAspectRatio="none">
+              <path d="M0 5 Q 50 10, 100 5" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" />
+            </svg>
+          </span>.
+        </h1>
+
+        <!-- Supporting Text -->
+        <p class="text-base sm:text-lg md:text-xl text-muted font-normal max-w-xl leading-relaxed mb-8 sm:mb-10">
+          We help businesses capture attention, spark curiosity, and turn potential customers into interested buyers.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 mb-8 sm:mb-10">
+          <a
+            href="#contact"
+            class="inline-flex items-center justify-center px-7 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base font-semibold rounded-full bg-[#ff4500] text-white hover:bg-[#e03d00] transition-all duration-200 shadow-lg shadow-[#ff4500]/25 hover:shadow-xl hover:shadow-[#ff4500]/35 hover:-translate-y-0.5 active:translate-y-0 text-center"
+          >
+            <span>Get Your Hook</span>
+            <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+          
+          <a
+            href="#what-we-do"
+            class="inline-flex items-center justify-center px-7 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-surface-1 hover:bg-surface-2 text-main border border-subtle hover:border-zinc-400 dark:hover:border-zinc-600 transition-all duration-200 text-center"
+          >
+            Explore What We Do
+          </a>
+        </div>
+
+        <!-- Micro Philosophy Footer -->
+        <div class="flex flex-wrap items-center gap-5 sm:gap-6 pt-6 border-t border-subtle text-xs text-dim">
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-[#ff4500]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>Pattern-interrupt architecture</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-[#ff4500]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>Scroll-stop tested</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: SIGNATURE ANIMATION — REFINED SINGLE MINIMALIST FEED -->
+      <div class="lg:col-span-5 flex flex-col items-center justify-center w-full">
+        
+        <!-- Clean Single Frame Container -->
+        <div class="w-full max-w-[360px] sm:max-w-[400px] relative">
+          
+          <!-- Outer Phone / Screen Frame -->
+          <div class="relative rounded-3xl bg-surface-card border-2 border-subtle shadow-xl overflow-hidden p-3.5 sm:p-4.5">
+            
+            <!-- Feed Top Bar -->
+            <div class="flex items-center justify-between pb-3 mb-3 border-b border-subtle">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
+                <span class="w-2 h-2 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
+                <span class="w-2 h-2 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
+              </div>
+              <div class="flex items-center gap-1.5 text-[10px] sm:text-[11px] font-mono tracking-wider text-dim uppercase">
+                <span id="feed-status-dot" class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span id="feed-status-text">SCROLLING FEED</span>
+              </div>
+              <!-- Manual Replay Button -->
+              <button
+                type="button"
+                id="replay-hook-btn"
+                class="flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-medium text-dim hover:text-main bg-surface-1 hover:bg-surface-2 border border-subtle transition-all cursor-pointer"
+                title="Replay Hook Animation"
+                aria-label="Replay Hook Animation"
+              >
+                <svg class="w-3 h-3 text-[#ff4500]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+                <span>Replay</span>
+              </button>
+            </div>
+
+            <!-- Viewport Area (Where feed cards scroll and hook drops) -->
+            <div id="feed-viewport" class="relative h-[380px] sm:h-[410px] overflow-hidden rounded-2xl bg-surface-1 border border-subtle select-none">
+              
+              <!-- Scrolling Feed Stream -->
+              <div id="feed-stream" class="flex flex-col gap-3 p-3 transition-transform">
+                
+                <!-- Card 1: Generic Noise -->
+                <div class="feed-card rounded-xl p-3 bg-surface-card border border-subtle opacity-50">
+                  <div class="flex items-center gap-2 mb-2">
+                    <div class="w-5 h-5 rounded-full bg-zinc-200 dark:bg-zinc-800"></div>
+                    <div class="h-2 w-20 bg-zinc-200 dark:bg-zinc-800 rounded"></div>
+                  </div>
+                  <div class="h-2.5 w-11/12 bg-zinc-200 dark:bg-zinc-800 rounded mb-1.5"></div>
+                  <div class="h-2 w-2/3 bg-zinc-200 dark:bg-zinc-800 rounded mb-2"></div>
+                  <div class="text-[10px] text-zinc-400 font-normal">Generic Brand • "5 Tips You Already Know..."</div>
+                </div>
+
+                <!-- Card 2: Boring Pitch -->
+                <div class="feed-card rounded-xl p-3 bg-surface-card border border-subtle opacity-50">
+                  <div class="flex items-center gap-2 mb-2">
+                    <div class="w-5 h-5 rounded-full bg-zinc-200 dark:bg-zinc-800"></div>
+                    <div class="h-2 w-24 bg-zinc-200 dark:bg-zinc-800 rounded"></div>
+                  </div>
+                  <div class="h-2.5 w-4/5 bg-zinc-200 dark:bg-zinc-800 rounded mb-1.5"></div>
+                  <div class="h-2 w-1/2 bg-zinc-200 dark:bg-zinc-800 rounded mb-2"></div>
+                  <div class="text-[10px] text-zinc-400 font-normal">Standard Post • "Q4 synergy frameworks..."</div>
+                </div>
+
+                <!-- Card 3: THE WINNING TARGET CARD -->
+                <div
+                  id="target-hook-card"
+                  class="feed-card relative rounded-2xl p-4 bg-surface-card border-2 border-subtle transition-all duration-300 z-10 shadow-sm"
+                >
+                  <!-- Snag Indicator Ring -->
+                  <div
+                    id="snag-point"
+                    class="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-[#ff4500] border-2 border-white dark:border-zinc-950 opacity-0 scale-50 transition-all duration-300 shadow-md z-20"
+                  ></div>
+
+                  <div class="flex items-center justify-between mb-2.5">
+                    <div class="flex items-center gap-2">
+                      <div class="w-6 h-6 rounded-lg bg-[#ff4500] flex items-center justify-center text-white text-[11px] font-extrabold shadow-2xs">
+                        H
+                      </div>
+                      <div>
+                        <div class="text-[11px] font-bold text-main leading-tight font-['Poppins',sans-serif]">MyHookLab</div>
+                        <div class="text-[9px] text-dim">Pattern Interrupt Spec</div>
+                      </div>
+                    </div>
+                    <span
+                      id="hook-badge"
+                      class="opacity-0 transition-opacity duration-300 text-[9px] font-bold px-2 py-0.5 rounded-full bg-[#ff4500]/15 text-[#ff4500] border border-[#ff4500]/30 uppercase tracking-wider"
+                    >
+                      Caught!
+                    </span>
+                  </div>
+
+                  <!-- Hook headline that grabs attention -->
+                  <p class="text-xs sm:text-sm font-bold text-main leading-snug mb-1.5 font-['Poppins',sans-serif]">
+                    "Your product is great. Your first 3 seconds are why they leave."
+                  </p>
+                  
+                  <p class="text-[11px] text-muted mb-3 leading-relaxed font-normal">
+                    Make them stop. Make them notice. Before they scroll past into oblivion.
+                  </p>
+
+                  <div class="flex items-center justify-between pt-2 border-t border-subtle text-[10px]">
+                    <span class="font-semibold text-[#ff4500]">0.4s Retention Snag</span>
+                    <span class="text-dim font-mono">100% Focused</span>
+                  </div>
+                </div>
+
+                <!-- Card 4: More Generic Noise -->
+                <div class="feed-card rounded-xl p-3 bg-surface-card border border-subtle opacity-50">
+                  <div class="flex items-center gap-2 mb-2">
+                    <div class="w-5 h-5 rounded-full bg-zinc-200 dark:bg-zinc-800"></div>
+                    <div class="h-2 w-28 bg-zinc-200 dark:bg-zinc-800 rounded"></div>
+                  </div>
+                  <div class="h-2.5 w-4/5 bg-zinc-200 dark:bg-zinc-800 rounded mb-1.5"></div>
+                  <div class="text-[10px] text-zinc-400 font-normal">Another Ad • "Generic promotional message..."</div>
+                </div>
+
+                <!-- Card 5: More generic feed -->
+                <div class="feed-card rounded-xl p-3 bg-surface-card border border-subtle opacity-50">
+                  <div class="flex items-center gap-2 mb-2">
+                    <div class="w-5 h-5 rounded-full bg-zinc-200 dark:bg-zinc-800"></div>
+                    <div class="h-2 w-16 bg-zinc-200 dark:bg-zinc-800 rounded"></div>
+                  </div>
+                  <div class="h-2.5 w-3/4 bg-zinc-200 dark:bg-zinc-800 rounded mb-1.5"></div>
+                  <div class="text-[10px] text-zinc-400 font-normal">Social Post • "Why consistency matters..."</div>
+                </div>
+
+              </div>
+
+              <!-- THE MINIMALIST PREMIUM HOOK (Vector) -->
+              <div
+                id="minimalist-hook-assembly"
+                class="absolute left-1/2 -translate-x-1/2 top-0 pointer-events-none z-30 transition-transform duration-600 ease-out"
+                style="transform: translateY(-130%);"
+              >
+                <!-- Clean Minimalist Taut Line -->
+                <div class="w-[2px] h-32 bg-gradient-to-b from-[#ff4500] via-zinc-400 to-zinc-800 dark:to-zinc-100 mx-auto"></div>
+                
+                <!-- Premium Minimalist Geometric Hook Glyph -->
+                <div class="relative -mt-0.5 flex items-center justify-center">
+                  <svg
+                    class="w-14 h-18 text-zinc-900 dark:text-zinc-100 drop-shadow-xl"
+                    viewBox="0 0 56 72"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <!-- Hook Top Circular Eyelet -->
+                    <circle cx="28" cy="8" r="4.5" fill="#ff4500" stroke="currentColor" stroke-width="2.5" />
+                    
+                    <!-- Clean Precision Shank -->
+                    <path d="M28 13.5 V42" stroke-width="3.5" />
+                    
+                    <!-- Symmetrical Smooth Bend & Sharp Tapered Barb -->
+                    <path
+                      d="M28 42 C28 56, 12 56, 12 44 C12 37, 18 36, 19 40"
+                      stroke="#ff4500"
+                      stroke-width="3.5"
+                    />
+                  </svg>
+                  
+                  <!-- Contact Impact Glow -->
+                  <div
+                    id="hook-spark"
+                    class="absolute bottom-2.5 left-2 w-3.5 h-3.5 rounded-full bg-[#ff4500] blur-xs opacity-0 transition-opacity duration-300"
+                  ></div>
+                </div>
+              </div>
+
+              <!-- Status Banner Overlay when scroll is stopped -->
+              <div
+                id="scroll-stopped-banner"
+                class="absolute bottom-3 left-3 right-3 py-2 px-3 rounded-xl bg-zinc-950/92 text-white dark:bg-white/95 dark:text-zinc-950 text-xs font-semibold flex items-center justify-between opacity-0 translate-y-3 transition-all duration-300 z-20 shadow-lg border border-subtle"
+              >
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[#ff4500] animate-ping"></span>
+                  <span class="text-[11px] sm:text-xs">SCROLL INTERRUPTED</span>
+                </div>
+                <span class="font-mono text-[9px] sm:text-[10px] text-[#ff4500] font-bold">ATTENTION CAPTURED</span>
+              </div>
+
+            </div>
+
+            <!-- Frame Sub-Caption -->
+            <div class="mt-3 flex items-center justify-between text-xs text-dim">
+              <span>Interactive Simulator</span>
+              <span class="font-mono text-[11px] text-[#ff4500]">Stop The Scroll Mechanism</span>
+            </div>
+
+          </div>
+
+          <!-- Ambient Glow Under Device -->
+          <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-[#ff4500]/10 rounded-full blur-2xl -z-10"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Animation Controller: Clean, Stutter-Free, Predictable -->
+<script>
+  function initHeroHookAnimation() {
+    const stream = document.getElementById('feed-stream');
+    const hookAssembly = document.getElementById('minimalist-hook-assembly');
+    const targetCard = document.getElementById('target-hook-card');
+    const hookBadge = document.getElementById('hook-badge');
+    const snagPoint = document.getElementById('snag-point');
+    const hookSpark = document.getElementById('hook-spark');
+    const banner = document.getElementById('scroll-stopped-banner');
+    const statusDot = document.getElementById('feed-status-dot');
+    const statusText = document.getElementById('feed-status-text');
+    const replayBtn = document.getElementById('replay-hook-btn');
+
+    if (!stream || !hookAssembly || !targetCard) return;
+
+    let timer: number | null = null;
+    let isRunning = false;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Fixed distance that aligns target card perfectly at center of viewport
+    const targetScrollDistance = -136; 
+
+    function resetToIdle() {
+      if (timer) clearTimeout(timer);
+      stream.style.transition = 'none';
+      stream.style.transform = 'translateY(0px)';
+      hookAssembly.style.transition = 'none';
+      hookAssembly.style.transform = 'translateY(-130%)';
+
+      targetCard.style.transition = 'none';
+      targetCard.style.transform = 'none';
+      targetCard.style.borderColor = 'var(--border-subtle)';
+      targetCard.style.boxShadow = 'none';
+
+      if (hookBadge) hookBadge.style.opacity = '0';
+      if (snagPoint) {
+        snagPoint.style.opacity = '0';
+        snagPoint.style.transform = 'translate(-50%, 0) scale(0.5)';
+      }
+      if (hookSpark) hookSpark.style.opacity = '0';
+      if (banner) {
+        banner.style.opacity = '0';
+        banner.style.transform = 'translateY(12px)';
+      }
+      if (statusDot) {
+        statusDot.className = 'w-2 h-2 rounded-full bg-emerald-500 animate-pulse';
+      }
+      if (statusText) statusText.innerText = 'SCROLLING FEED';
+    }
+
+    function runSequence() {
+      if (isRunning) return;
+      isRunning = true;
+
+      resetToIdle();
+
+      if (prefersReducedMotion) {
+        stream.style.transform = `translateY(${targetScrollDistance}px)`;
+        hookAssembly.style.transform = 'translateY(116px)';
+        targetCard.style.borderColor = '#ff4500';
+        if (hookBadge) hookBadge.style.opacity = '1';
+        if (banner) {
+          banner.style.opacity = '1';
+          banner.style.transform = 'translateY(0)';
+        }
+        isRunning = false;
+        return;
+      }
+
+      // 1. Smooth upward scroll
+      void stream.offsetHeight;
+      stream.style.transition = 'transform 2.0s cubic-bezier(0.22, 1, 0.36, 1)';
+      stream.style.transform = `translateY(${targetScrollDistance}px)`;
+
+      // 2. Hook drops smoothly from above to meet the target card
+      setTimeout(() => {
+        hookAssembly.style.transition = 'transform 0.55s cubic-bezier(0.25, 1.25, 0.5, 1)';
+        hookAssembly.style.transform = 'translateY(114px)';
+      }, 1000);
+
+      // 3. Instant halt & latch at 1.55s
+      setTimeout(() => {
+        // Halt scroll firmly in place
+        stream.style.transition = 'none';
+        stream.style.transform = `translateY(${targetScrollDistance}px)`;
+
+        // Highlight and lift card
+        targetCard.style.transition = 'all 0.3s cubic-bezier(0.2, 0.9, 0.3, 1.2)';
+        targetCard.style.transform = 'scale(1.03) translateY(-3px)';
+        targetCard.style.borderColor = '#ff4500';
+        targetCard.style.boxShadow = '0 12px 24px -6px rgba(255, 69, 0, 0.3), 0 0 0 1.5px #ff4500';
+
+        if (hookBadge) hookBadge.style.opacity = '1';
+        if (snagPoint) {
+          snagPoint.style.opacity = '1';
+          snagPoint.style.transform = 'translate(-50%, 0) scale(1)';
+        }
+        if (hookSpark) hookSpark.style.opacity = '1';
+
+        if (statusDot) {
+          statusDot.className = 'w-2 h-2 rounded-full bg-[#ff4500]';
+        }
+        if (statusText) statusText.innerText = 'SCROLL FROZEN';
+
+        if (banner) {
+          banner.style.opacity = '1';
+          banner.style.transform = 'translateY(0)';
+        }
+      }, 1550);
+
+      // 4. Hold captured moment for 4.2s, then loop seamlessly
+      timer = window.setTimeout(() => {
+        isRunning = false;
+        runSequence();
+      }, 5800);
+    }
+
+    // Initialize
+    runSequence();
+
+    // Replay button listener
+    replayBtn?.addEventListener('click', () => {
+      isRunning = false;
+      runSequence();
+    });
+  }
+
+  initHeroHookAnimation();
+  document.addEventListener('astro:after-swap', initHeroHookAnimation);
+</script>

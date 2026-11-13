@@ -1,0 +1,232 @@
+---
+// Contact.astro
+---
+
+<section id="contact" class="py-16 sm:py-24 md:py-32 border-t border-subtle bg-surface-1/40 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="text-center mb-12 sm:mb-16">
+        <div class="inline-flex items-center gap-3 mb-4">
+          <span class="w-6 h-[2px] bg-[#ff4500]"></span>
+          <span class="text-xs font-semibold tracking-widest text-dim uppercase">Get In Touch</span>
+          <span class="w-6 h-[2px] bg-[#ff4500]"></span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-main leading-tight mb-4">
+          Let's Create Something People Notice.
+        </h2>
+        <p class="text-base sm:text-lg text-muted font-normal max-w-xl mx-auto leading-relaxed">
+          Tell us about your offer, audience, or message. We will explore how to craft the hook that stops your market in their tracks.
+        </p>
+      </div>
+
+      <!-- Contact Form Container -->
+      <div class="bg-surface-card rounded-2xl p-6 sm:p-10 border border-subtle shadow-xl shadow-black/[0.02] dark:shadow-black/20">
+        
+        <!-- Form State Message: Success Notice -->
+        <div id="contact-success" class="hidden text-center py-10 px-4 space-y-4">
+          <div class="w-14 h-14 rounded-full bg-[#ff4500]/10 text-[#ff4500] border border-[#ff4500]/30 mx-auto flex items-center justify-center">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-main">Your Request Has Been Prepared</h3>
+          <p class="text-sm sm:text-base text-muted max-w-md mx-auto leading-relaxed">
+            Thank you, <span id="success-name" class="font-semibold text-main">there</span>. We've captured your project details and attention challenge. Since this demo does not connect to an external mailing server, your request is safely stored in your session.
+          </p>
+          <div class="pt-4">
+            <button
+              type="button"
+              id="reset-form-btn"
+              class="inline-flex items-center justify-center px-6 py-2.5 text-xs font-semibold uppercase tracking-wider rounded-full bg-surface-1 hover:bg-surface-2 text-main border border-subtle transition-colors"
+            >
+              Submit Another Inquiry
+            </button>
+          </div>
+        </div>
+
+        <!-- Active Form -->
+        <form id="hook-contact-form" class="space-y-6" novalidate>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <!-- Name Field -->
+            <div>
+              <label for="contact-name" class="block text-xs font-bold uppercase tracking-wider text-main mb-2">
+                Your Name <span class="text-[#ff4500]">*</span>
+              </label>
+              <input
+                type="text"
+                id="contact-name"
+                name="name"
+                required
+                placeholder="Alex Morgan"
+                class="w-full px-4 py-3 rounded-xl bg-surface-1 border border-subtle text-main placeholder:text-zinc-400 focus:outline-none focus:border-[#ff4500] focus:ring-1 focus:ring-[#ff4500] transition-colors text-base sm:text-sm font-['Poppins',sans-serif]"
+              />
+              <span id="name-error" class="hidden text-xs text-rose-500 mt-1.5 font-medium">Please enter your name</span>
+            </div>
+
+            <!-- Email Field -->
+            <div>
+              <label for="contact-email" class="block text-xs font-bold uppercase tracking-wider text-main mb-2">
+                Email Address <span class="text-[#ff4500]">*</span>
+              </label>
+              <input
+                type="email"
+                id="contact-email"
+                name="email"
+                required
+                placeholder="alex@company.com"
+                class="w-full px-4 py-3 rounded-xl bg-surface-1 border border-subtle text-main placeholder:text-zinc-400 focus:outline-none focus:border-[#ff4500] focus:ring-1 focus:ring-[#ff4500] transition-colors text-base sm:text-sm font-['Poppins',sans-serif]"
+              />
+              <span id="email-error" class="hidden text-xs text-rose-500 mt-1.5 font-medium">Please enter a valid email address</span>
+            </div>
+          </div>
+
+          <!-- Business or Brand Name -->
+          <div>
+            <label for="contact-brand" class="block text-xs font-bold uppercase tracking-wider text-main mb-2">
+              Business or Brand Name
+            </label>
+            <input
+              type="text"
+              id="contact-brand"
+              name="brand"
+              placeholder="e.g. Acme Studio / Personal Brand"
+              class="w-full px-4 py-3 rounded-xl bg-surface-1 border border-subtle text-main placeholder:text-zinc-400 focus:outline-none focus:border-[#ff4500] focus:ring-1 focus:ring-[#ff4500] transition-colors text-base sm:text-sm font-['Poppins',sans-serif]"
+            />
+          </div>
+
+          <!-- Attention Problem / Requirement -->
+          <div>
+            <label for="contact-need" class="block text-xs font-bold uppercase tracking-wider text-main mb-2">
+              What do you need help getting attention for? <span class="text-[#ff4500]">*</span>
+            </label>
+            <div class="mb-3">
+              <select
+                id="contact-category"
+                name="category"
+                class="w-full px-4 py-3 rounded-xl bg-surface-1 border border-subtle text-main focus:outline-none focus:border-[#ff4500] focus:ring-1 focus:ring-[#ff4500] transition-colors text-sm font-['Poppins',sans-serif]"
+              >
+                <option value="marketing">Marketing & Paid Ad Hooks</option>
+                <option value="social">Instagram & Social Media Scroll-Stoppers</option>
+                <option value="video">Video First-3-Seconds Openers</option>
+                <option value="landing">Website & Landing Page Headlines</option>
+                <option value="product">Product Positioning & Messaging</option>
+                <option value="branding">Personal Branding & Thought Leadership</option>
+                <option value="other">Other Attention Challenge</option>
+              </select>
+            </div>
+            <textarea
+              id="contact-details"
+              name="details"
+              rows="4"
+              required
+              placeholder="Briefly describe what you're working on, who you want to reach, and where you're struggling to capture attention..."
+              class="w-full px-4 py-3 rounded-xl bg-surface-1 border border-subtle text-main placeholder:text-zinc-400 focus:outline-none focus:border-[#ff4500] focus:ring-1 focus:ring-[#ff4500] transition-colors text-base sm:text-sm font-['Poppins',sans-serif]"
+            ></textarea>
+            <span id="details-error" class="hidden text-xs text-rose-500 mt-1.5 font-medium">Please share what you need help getting attention for</span>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="pt-2">
+            <button
+              type="submit"
+              id="submit-btn"
+              class="w-full py-4 px-8 rounded-full bg-[#ff4500] text-white font-semibold text-sm tracking-wide hover:bg-[#e03d00] transition-all duration-200 shadow-lg shadow-[#ff4500]/25 hover:shadow-xl hover:shadow-[#ff4500]/35 flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <span>Submit Request</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Transparency Notice -->
+          <p class="text-center text-xs text-dim">
+            Transparent lab policy: No spam. Direct response within 24 business hours.
+          </p>
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  function setupContactForm() {
+    const form = document.getElementById('hook-contact-form') as HTMLFormElement | null;
+    const successBox = document.getElementById('contact-success');
+    const successName = document.getElementById('success-name');
+    const resetBtn = document.getElementById('reset-form-btn');
+
+    const nameInput = document.getElementById('contact-name') as HTMLInputElement | null;
+    const emailInput = document.getElementById('contact-email') as HTMLInputElement | null;
+    const detailsInput = document.getElementById('contact-details') as HTMLTextAreaElement | null;
+
+    const nameError = document.getElementById('name-error');
+    const emailError = document.getElementById('email-error');
+    const detailsError = document.getElementById('details-error');
+
+    if (!form || !successBox) return;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      let hasError = false;
+
+      // Validate Name
+      if (!nameInput?.value.trim()) {
+        nameError?.classList.remove('hidden');
+        nameInput?.classList.add('border-rose-500');
+        hasError = true;
+      } else {
+        nameError?.classList.add('hidden');
+        nameInput?.classList.remove('border-rose-500');
+      }
+
+      // Validate Email
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailInput?.value.trim() || !emailRegex.test(emailInput.value.trim())) {
+        emailError?.classList.remove('hidden');
+        emailInput?.classList.add('border-rose-500');
+        hasError = true;
+      } else {
+        emailError?.classList.add('hidden');
+        emailInput?.classList.remove('border-rose-500');
+      }
+
+      // Validate Details
+      if (!detailsInput?.value.trim()) {
+        detailsError?.classList.remove('hidden');
+        detailsInput?.classList.add('border-rose-500');
+        hasError = true;
+      } else {
+        detailsError?.classList.add('hidden');
+        detailsInput?.classList.remove('border-rose-500');
+      }
+
+      if (hasError) return;
+
+      // Valid: Display confirmation with name
+      if (successName && nameInput) {
+        successName.textContent = nameInput.value.trim();
+      }
+
+      form.classList.add('hidden');
+      successBox.classList.remove('hidden');
+    });
+
+    resetBtn?.addEventListener('click', () => {
+      form.reset();
+      form.classList.remove('hidden');
+      successBox.classList.add('hidden');
+    });
+  }
+
+  setupContactForm();
+  document.addEventListener('astro:after-swap', setupContactForm);
+</script>
+

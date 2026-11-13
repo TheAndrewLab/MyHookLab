@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f6f6f8;
+    --bg-tertiary: #efeff2;
+    --bg-card: #ffffff;
+    --text-primary: #09090b;
+    --text-secondary: #52525b;
+    --text-muted: #71717a;
+    --border-subtle: #e4e4e7;
+    --border-hover: #d4d4d8;
+    --accent: #ff4500;
+    --accent-hover: #e03d00;
+    --accent-glow: rgba(255, 69, 0, 0.16);
+    --feed-bg: #f4f4f7;
+    --card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+    --card-hover-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.08);
+  }
+
+  html.dark {
+    --bg-primary: #08080a;
+    --bg-secondary: #111115;
+    --bg-tertiary: #17171d;
+    --bg-card: #121217;
+    --text-primary: #fafafa;
+    --text-secondary: #a1a1aa;
+    --text-muted: #71717a;
+    --border-subtle: #222228;
+    --border-hover: #32323d;
+    --accent: #ff4d15;
+    --accent-hover: #ff6434;
+    --accent-glow: rgba(255, 77, 21, 0.28);
+    --feed-bg: #0d0d11;
+    --card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.4);
+    --card-hover-shadow: 0 14px 28px -6px rgba(0, 0, 0, 0.6);
+  }
+
+  * {
+    border-color: var(--border-subtle);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    color-scheme: light dark;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Utilities and Animations */
+.bg-canvas {
+  background-color: var(--bg-primary);
+}
+
+.bg-surface-1 {
+  background-color: var(--bg-secondary);
+}
+
+.bg-surface-2 {
+  background-color: var(--bg-tertiary);
+}
+
+.bg-surface-card {
+  background-color: var(--bg-card);
+}
+
+.text-main {
+  color: var(--text-primary);
+}
+
+.text-muted {
+  color: var(--text-secondary);
+}
+
+.text-dim {
+  color: var(--text-muted);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.border-subtle {
+  border-color: var(--border-subtle);
+}
+
+.border-hover:hover {
+  border-color: var(--border-hover);
+}
+
+/* Signature Hero Animation Keyframes & Utility Classes */
+@keyframes feedScroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes hookEntry {
+  0% {
+    transform: translateY(-130%) rotate(-4deg);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(8px) rotate(1deg);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-4px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes caughtCardLift {
+  0% {
+    transform: scale(1) translateZ(0);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  100% {
+    transform: scale(1.05) translateY(-8px) translateZ(30px);
+    box-shadow: 0 20px 40px -10px var(--accent-glow), 0 0 0 2px var(--accent);
+  }
+}
+
+@keyframes pulseHighlight {
+  0%, 100% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 14px var(--accent));
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

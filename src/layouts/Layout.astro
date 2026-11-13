@@ -1,23 +1,104 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import '../styles/global.css';
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "MyHookLab — Make Them Stop. Make Them Notice.",
+  description = "MyHookLab helps businesses capture the attention of potential customers through powerful hooks, attention-grabbing messaging, and compelling content openings."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="MyHookLab" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+
+    <!-- Google Fonts: Poppins & Playfair Display for distinctive wordmark -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Theme Initialization Script to Prevent FOUC -->
+    <script is:inline>
+      (function() {
+        try {
+          const stored = localStorage.getItem('myhooklab-theme');
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'dark' || (!stored && prefersDark)) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.setAttribute('data-theme', 'dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.setAttribute('data-theme', 'light');
+          }
+        } catch (e) {
+          // ignore localStorage access issues in restrictive sandboxes
+        }
+      })();
+    </script>
+  </head>
+  <body class="bg-canvas text-main font-['Poppins',sans-serif] selection:bg-[#ff4500] selection:text-white antialiased transition-colors duration-200">
+    <slot />
+
+    <!-- Global Theme Management Script -->
+    <script>
+      function initThemeToggle() {
+        const toggleButtons = document.querySelectorAll('[data-theme-toggle]');
+        
+        function updateTheme(isDark: boolean) {
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('myhooklab-theme', 'dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('myhooklab-theme', 'light');
+          }
+          
+          toggleButtons.forEach(btn => {
+            btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+            btn.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+          });
+        }
+
+        toggleButtons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.contains('dark');
+            updateTheme(!isDark);
+          });
+        });
+      }
+
+      // Initialize on load and on Astro view swaps if used
+      initThemeToggle();
+      document.addEventListener('astro:after-swap', initThemeToggle);
+    </script>
+  </body>
+</html>
