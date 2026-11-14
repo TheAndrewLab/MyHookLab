@@ -10,6 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "postinstall": "node scripts/patch-rollup.cjs",
     "deploy": "astro build && npx wrangler pages deploy dist --project-name=myhooklab --branch=main --commit-dirty=true"
   },
   "dependencies": {

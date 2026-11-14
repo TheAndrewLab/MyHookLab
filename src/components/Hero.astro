@@ -21,7 +21,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
       
-      <!-- Left Column: High-Impact Typography & CTAs -->
+      <!-- Left Column: High-Impact Typography & CTAs (Preserved untouched) -->
       <div class="lg:col-span-7 flex flex-col justify-center text-left">
         
         <!-- Lab Badge -->
@@ -85,336 +85,330 @@
 
       </div>
 
-      <!-- Right Column: SIGNATURE ANIMATION — REFINED SINGLE MINIMALIST FEED -->
+      <!-- Right Column: MINIMAL, PREMIUM FALLING-HOOK ANIMATION -->
       <div class="lg:col-span-5 flex flex-col items-center justify-center w-full">
         
-        <!-- Clean Single Frame Container -->
-        <div class="w-full max-w-[360px] sm:max-w-[400px] relative">
+        <!-- Dark Charcoal Showcase Canvas (#0B0B0B) -->
+        <div class="w-full max-w-[360px] sm:max-w-[420px] relative">
           
-          <!-- Outer Phone / Screen Frame -->
-          <div class="relative rounded-3xl bg-surface-card border-2 border-subtle shadow-xl overflow-hidden p-3.5 sm:p-4.5">
-            
-            <!-- Feed Top Bar -->
-            <div class="flex items-center justify-between pb-3 mb-3 border-b border-subtle">
+          <div
+            id="hook-stage-container"
+            class="relative h-[430px] sm:h-[470px] w-full rounded-3xl bg-[#0B0B0B] border border-zinc-800/90 shadow-2xl overflow-hidden flex flex-col items-center justify-center select-none"
+          >
+            <!-- Stage Top Bar (Subtle & Minimalist) -->
+            <div class="absolute top-0 left-0 right-0 px-4 py-3 flex items-center justify-between border-b border-zinc-900/80 z-30">
               <div class="flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
-                <span class="w-2 h-2 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
-                <span class="w-2 h-2 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
+                <span class="w-2 h-2 rounded-full bg-zinc-700"></span>
+                <span class="w-2 h-2 rounded-full bg-zinc-800"></span>
+                <span class="w-2 h-2 rounded-full bg-zinc-800"></span>
               </div>
-              <div class="flex items-center gap-1.5 text-[10px] sm:text-[11px] font-mono tracking-wider text-dim uppercase">
-                <span id="feed-status-dot" class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span id="feed-status-text">SCROLLING FEED</span>
-              </div>
-              <!-- Manual Replay Button -->
+
+              <!-- Replay Trigger (Discrete, for testing & re-watching) -->
               <button
                 type="button"
-                id="replay-hook-btn"
-                class="flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-medium text-dim hover:text-main bg-surface-1 hover:bg-surface-2 border border-subtle transition-all cursor-pointer"
-                title="Replay Hook Animation"
-                aria-label="Replay Hook Animation"
+                id="replay-falling-hook"
+                class="flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-mono text-zinc-400 hover:text-zinc-200 bg-zinc-900/80 hover:bg-zinc-800 border border-zinc-800 transition-colors cursor-pointer"
+                title="Replay Falling Hook Animation"
+                aria-label="Replay Falling Hook Animation"
               >
-                <svg class="w-3 h-3 text-[#ff4500]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <svg class="w-3 h-3 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
                 <span>Replay</span>
               </button>
             </div>
 
-            <!-- Viewport Area (Where feed cards scroll and hook drops) -->
-            <div id="feed-viewport" class="relative h-[380px] sm:h-[410px] overflow-hidden rounded-2xl bg-surface-1 border border-subtle select-none">
+            <!-- Central Animation Viewport -->
+            <div class="relative w-full h-full flex flex-col items-center justify-center pt-8 pb-4 px-4 overflow-hidden">
               
-              <!-- Scrolling Feed Stream -->
-              <div id="feed-stream" class="flex flex-col gap-3 p-3 transition-transform">
+              <!-- COMBINED ASSEMBLY: Hook + Floating Content Card -->
+              <div
+                id="card-and-hook-assembly"
+                class="relative flex flex-col items-center will-change-transform"
+                style="transform: translateY(0);"
+              >
                 
-                <!-- Card 1: Generic Noise -->
-                <div class="feed-card rounded-xl p-3 bg-surface-card border border-subtle opacity-50">
-                  <div class="flex items-center gap-2 mb-2">
-                    <div class="w-5 h-5 rounded-full bg-zinc-200 dark:bg-zinc-800"></div>
-                    <div class="h-2 w-20 bg-zinc-200 dark:bg-zinc-800 rounded"></div>
-                  </div>
-                  <div class="h-2.5 w-11/12 bg-zinc-200 dark:bg-zinc-800 rounded mb-1.5"></div>
-                  <div class="h-2 w-2/3 bg-zinc-200 dark:bg-zinc-800 rounded mb-2"></div>
-                  <div class="text-[10px] text-zinc-400 font-normal">Generic Brand • "5 Tips You Already Know..."</div>
-                </div>
-
-                <!-- Card 2: Boring Pitch -->
-                <div class="feed-card rounded-xl p-3 bg-surface-card border border-subtle opacity-50">
-                  <div class="flex items-center gap-2 mb-2">
-                    <div class="w-5 h-5 rounded-full bg-zinc-200 dark:bg-zinc-800"></div>
-                    <div class="h-2 w-24 bg-zinc-200 dark:bg-zinc-800 rounded"></div>
-                  </div>
-                  <div class="h-2.5 w-4/5 bg-zinc-200 dark:bg-zinc-800 rounded mb-1.5"></div>
-                  <div class="h-2 w-1/2 bg-zinc-200 dark:bg-zinc-800 rounded mb-2"></div>
-                  <div class="text-[10px] text-zinc-400 font-normal">Standard Post • "Q4 synergy frameworks..."</div>
-                </div>
-
-                <!-- Card 3: THE WINNING TARGET CARD -->
+                <!-- REALISTIC METALLIC SILVER FISHING HOOK -->
                 <div
-                  id="target-hook-card"
-                  class="feed-card relative rounded-2xl p-4 bg-surface-card border-2 border-subtle transition-all duration-300 z-10 shadow-sm"
+                  id="falling-silver-hook"
+                  class="absolute left-1/2 -translate-x-1/2 bottom-[calc(100%-14px)] pointer-events-none z-20 will-change-transform"
+                  style="transform: translateY(-240px);"
                 >
-                  <!-- Snag Indicator Ring -->
-                  <div
-                    id="snag-point"
-                    class="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-[#ff4500] border-2 border-white dark:border-zinc-950 opacity-0 scale-50 transition-all duration-300 shadow-md z-20"
-                  ></div>
+                  <!-- Fine Steel Trace / Suspension Line -->
+                  <div class="w-[1.5px] h-48 bg-gradient-to-b from-transparent via-zinc-400 to-zinc-300 mx-auto opacity-75"></div>
 
-                  <div class="flex items-center justify-between mb-2.5">
-                    <div class="flex items-center gap-2">
-                      <div class="w-6 h-6 rounded-lg bg-[#ff4500] flex items-center justify-center text-white text-[11px] font-extrabold shadow-2xs">
-                        H
+                  <!-- Realistic Metallic Silver Fishing Hook Vector -->
+                  <div class="relative -mt-0.5 flex items-center justify-center">
+                    <svg
+                      class="w-16 h-24 filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.6)]"
+                      viewBox="0 0 54 80"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs>
+                        <!-- Linear Metallic Gradient for Cylindrical Steel Shank -->
+                        <linearGradient id="silverShankGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stop-color="#4B5563" />
+                          <stop offset="25%" stop-color="#9CA3AF" />
+                          <stop offset="45%" stop-color="#FFFFFF" />
+                          <stop offset="70%" stop-color="#D1D5DB" />
+                          <stop offset="100%" stop-color="#374151" />
+                        </linearGradient>
+
+                        <!-- Radial Specular Reflection for the Circular Eyelet -->
+                        <radialGradient id="silverEyeletGrad" cx="35%" cy="35%" r="65%">
+                          <stop offset="0%" stop-color="#FFFFFF" />
+                          <stop offset="40%" stop-color="#D1D5DB" />
+                          <stop offset="80%" stop-color="#6B7280" />
+                          <stop offset="100%" stop-color="#1F2937" />
+                        </radialGradient>
+
+                        <!-- Subtle Catch Highlight at Point -->
+                        <linearGradient id="silverPointGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#FFFFFF" />
+                          <stop offset="50%" stop-color="#E5E7EB" />
+                          <stop offset="100%" stop-color="#4B5563" />
+                        </linearGradient>
+                      </defs>
+
+                      <!-- Top Ring Eyelet (Outer) -->
+                      <circle cx="27" cy="8" r="5" fill="url(#silverEyeletGrad)" stroke="#374151" stroke-width="1" />
+                      <!-- Top Ring Eyelet (Inner Hole) -->
+                      <circle cx="27" cy="8" r="2.2" fill="#0B0B0B" />
+
+                      <!-- Main Vertical Cylindrical Shank -->
+                      <path
+                        d="M25 12.5 H29 V48 H25 Z"
+                        fill="url(#silverShankGrad)"
+                      />
+
+                      <!-- Sweeping Metallic Bend & Razor Sharp Barb Catching Under Card -->
+                      <path
+                        d="M29 47.5 
+                           C29 64, 11 64, 11 50 
+                           C11 41, 19 40, 20.5 45
+                           L18.5 48.5
+                           L16 46
+                           C15 44, 14 44.5, 14 50
+                           C14 59.5, 26 59.5, 26 47.5
+                           Z"
+                        fill="url(#silverPointGrad)"
+                        stroke="#1F2937"
+                        stroke-width="0.75"
+                        stroke-linejoin="round"
+                      />
+
+                      <!-- Specular Chrome Ridge Highlight on Outer Spine -->
+                      <path
+                        d="M28 14 V48 C28 62, 12.5 62, 12.5 50"
+                        stroke="#FFFFFF"
+                        stroke-width="0.8"
+                        stroke-linecap="round"
+                        opacity="0.85"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- SIMPLE WHITE SOCIAL MEDIA CONTENT CARD -->
+                <div
+                  id="floating-white-card"
+                  class="relative w-[275px] sm:w-[305px] rounded-2xl bg-white p-4 sm:p-5 text-zinc-900 border border-zinc-200/90 shadow-[0_12px_28px_-6px_rgba(0,0,0,0.45),0_4px_10px_-2px_rgba(0,0,0,0.25)] will-change-transform transition-all"
+                >
+                  <!-- Card Header: Profile Info -->
+                  <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center gap-2.5">
+                      <!-- Sleek Minimalist Avatar -->
+                      <div class="w-8 h-8 rounded-full bg-zinc-900 flex items-center justify-center text-white text-[11px] font-bold font-['Poppins',sans-serif]">
+                        M
                       </div>
                       <div>
-                        <div class="text-[11px] font-bold text-main leading-tight font-['Poppins',sans-serif]">MyHookLab</div>
-                        <div class="text-[9px] text-dim">Pattern Interrupt Spec</div>
+                        <div class="text-xs font-bold text-zinc-900 leading-tight font-['Poppins',sans-serif]">
+                          MyHookLab
+                        </div>
+                        <div class="text-[10px] text-zinc-500 font-normal font-['Poppins',sans-serif]">
+                          @attention • 0.4s
+                        </div>
                       </div>
                     </div>
+
+                    <!-- Subtle Status Pill -->
                     <span
-                      id="hook-badge"
-                      class="opacity-0 transition-opacity duration-300 text-[9px] font-bold px-2 py-0.5 rounded-full bg-[#ff4500]/15 text-[#ff4500] border border-[#ff4500]/30 uppercase tracking-wider"
+                      id="card-status-pill"
+                      class="text-[9px] font-mono font-semibold px-2 py-0.5 rounded-full bg-zinc-100 text-zinc-600 transition-colors duration-300"
                     >
-                      Caught!
+                      FEED
                     </span>
                   </div>
 
-                  <!-- Hook headline that grabs attention -->
-                  <p class="text-xs sm:text-sm font-bold text-main leading-snug mb-1.5 font-['Poppins',sans-serif]">
-                    "Your product is great. Your first 3 seconds are why they leave."
-                  </p>
-                  
-                  <p class="text-[11px] text-muted mb-3 leading-relaxed font-normal">
-                    Make them stop. Make them notice. Before they scroll past into oblivion.
-                  </p>
-
-                  <div class="flex items-center justify-between pt-2 border-t border-subtle text-[10px]">
-                    <span class="font-semibold text-[#ff4500]">0.4s Retention Snag</span>
-                    <span class="text-dim font-mono">100% Focused</span>
+                  <!-- Hook Statement Content -->
+                  <div class="space-y-1.5 mb-3.5 text-left">
+                    <p class="text-xs sm:text-[13px] font-semibold text-zinc-900 leading-snug font-['Poppins',sans-serif]">
+                      "People cannot become customers if they never notice you first."
+                    </p>
+                    <p class="text-[11px] text-zinc-500 font-normal leading-relaxed font-['Poppins',sans-serif]">
+                      The right hook makes them stop the scroll.
+                    </p>
                   </div>
-                </div>
 
-                <!-- Card 4: More Generic Noise -->
-                <div class="feed-card rounded-xl p-3 bg-surface-card border border-subtle opacity-50">
-                  <div class="flex items-center gap-2 mb-2">
-                    <div class="w-5 h-5 rounded-full bg-zinc-200 dark:bg-zinc-800"></div>
-                    <div class="h-2 w-28 bg-zinc-200 dark:bg-zinc-800 rounded"></div>
+                  <!-- Minimal Engagement Rail -->
+                  <div class="flex items-center justify-between pt-2.5 border-t border-zinc-100 text-zinc-400 text-[10px] font-['Poppins',sans-serif]">
+                    <div class="flex items-center gap-3">
+                      <!-- Heart -->
+                      <span class="flex items-center gap-1 text-zinc-500">
+                        <svg class="w-3.5 h-3.5 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                        <span>Stop-Rate</span>
+                      </span>
+                      <!-- Comment -->
+                      <span class="flex items-center gap-1 text-zinc-500">
+                        <svg class="w-3.5 h-3.5 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                        <span>Noticed</span>
+                      </span>
+                    </div>
+
+                    <span class="font-mono text-[9px] text-[#ff4500] font-bold">
+                      94% HOOK
+                    </span>
                   </div>
-                  <div class="h-2.5 w-4/5 bg-zinc-200 dark:bg-zinc-800 rounded mb-1.5"></div>
-                  <div class="text-[10px] text-zinc-400 font-normal">Another Ad • "Generic promotional message..."</div>
+
                 </div>
 
-                <!-- Card 5: More generic feed -->
-                <div class="feed-card rounded-xl p-3 bg-surface-card border border-subtle opacity-50">
-                  <div class="flex items-center gap-2 mb-2">
-                    <div class="w-5 h-5 rounded-full bg-zinc-200 dark:bg-zinc-800"></div>
-                    <div class="h-2 w-16 bg-zinc-200 dark:bg-zinc-800 rounded"></div>
-                  </div>
-                  <div class="h-2.5 w-3/4 bg-zinc-200 dark:bg-zinc-800 rounded mb-1.5"></div>
-                  <div class="text-[10px] text-zinc-400 font-normal">Social Post • "Why consistency matters..."</div>
-                </div>
-
-              </div>
-
-              <!-- THE MINIMALIST PREMIUM HOOK (Vector) -->
-              <div
-                id="minimalist-hook-assembly"
-                class="absolute left-1/2 -translate-x-1/2 top-0 pointer-events-none z-30 transition-transform duration-600 ease-out"
-                style="transform: translateY(-130%);"
-              >
-                <!-- Clean Minimalist Taut Line -->
-                <div class="w-[2px] h-32 bg-gradient-to-b from-[#ff4500] via-zinc-400 to-zinc-800 dark:to-zinc-100 mx-auto"></div>
-                
-                <!-- Premium Minimalist Geometric Hook Glyph -->
-                <div class="relative -mt-0.5 flex items-center justify-center">
-                  <svg
-                    class="w-14 h-18 text-zinc-900 dark:text-zinc-100 drop-shadow-xl"
-                    viewBox="0 0 56 72"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <!-- Hook Top Circular Eyelet -->
-                    <circle cx="28" cy="8" r="4.5" fill="#ff4500" stroke="currentColor" stroke-width="2.5" />
-                    
-                    <!-- Clean Precision Shank -->
-                    <path d="M28 13.5 V42" stroke-width="3.5" />
-                    
-                    <!-- Symmetrical Smooth Bend & Sharp Tapered Barb -->
-                    <path
-                      d="M28 42 C28 56, 12 56, 12 44 C12 37, 18 36, 19 40"
-                      stroke="#ff4500"
-                      stroke-width="3.5"
-                    />
-                  </svg>
-                  
-                  <!-- Contact Impact Glow -->
-                  <div
-                    id="hook-spark"
-                    class="absolute bottom-2.5 left-2 w-3.5 h-3.5 rounded-full bg-[#ff4500] blur-xs opacity-0 transition-opacity duration-300"
-                  ></div>
-                </div>
-              </div>
-
-              <!-- Status Banner Overlay when scroll is stopped -->
-              <div
-                id="scroll-stopped-banner"
-                class="absolute bottom-3 left-3 right-3 py-2 px-3 rounded-xl bg-zinc-950/92 text-white dark:bg-white/95 dark:text-zinc-950 text-xs font-semibold flex items-center justify-between opacity-0 translate-y-3 transition-all duration-300 z-20 shadow-lg border border-subtle"
-              >
-                <div class="flex items-center gap-2">
-                  <span class="w-2 h-2 rounded-full bg-[#ff4500] animate-ping"></span>
-                  <span class="text-[11px] sm:text-xs">SCROLL INTERRUPTED</span>
-                </div>
-                <span class="font-mono text-[9px] sm:text-[10px] text-[#ff4500] font-bold">ATTENTION CAPTURED</span>
               </div>
 
             </div>
 
-            <!-- Frame Sub-Caption -->
-            <div class="mt-3 flex items-center justify-between text-xs text-dim">
-              <span>Interactive Simulator</span>
-              <span class="font-mono text-[11px] text-[#ff4500]">Stop The Scroll Mechanism</span>
+            <!-- Stage Bottom Sub-Label -->
+            <div class="absolute bottom-2.5 left-4 right-4 flex items-center justify-between text-[10px] text-zinc-500 font-mono">
+              <span>Attention Capture</span>
+              <span id="motion-phase-indicator" class="text-zinc-400">Natural Gravity</span>
             </div>
 
           </div>
 
-          <!-- Ambient Glow Under Device -->
-          <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-[#ff4500]/10 rounded-full blur-2xl -z-10"></div>
+          <!-- Subtle Dark Base Ambient Shadow -->
+          <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 w-4/5 h-10 bg-black/40 rounded-full blur-xl -z-10"></div>
         </div>
+
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- Animation Controller: Clean, Stutter-Free, Predictable -->
+<!-- Falling Hook Animation Engine: Natural gravity, smooth catch & gentle upward lift -->
 <script>
-  function initHeroHookAnimation() {
-    const stream = document.getElementById('feed-stream');
-    const hookAssembly = document.getElementById('minimalist-hook-assembly');
-    const targetCard = document.getElementById('target-hook-card');
-    const hookBadge = document.getElementById('hook-badge');
-    const snagPoint = document.getElementById('snag-point');
-    const hookSpark = document.getElementById('hook-spark');
-    const banner = document.getElementById('scroll-stopped-banner');
-    const statusDot = document.getElementById('feed-status-dot');
-    const statusText = document.getElementById('feed-status-text');
-    const replayBtn = document.getElementById('replay-hook-btn');
+  function initFallingHookAnimation() {
+    const hook = document.getElementById('falling-silver-hook');
+    const card = document.getElementById('floating-white-card');
+    const assembly = document.getElementById('card-and-hook-assembly');
+    const statusPill = document.getElementById('card-status-pill');
+    const indicator = document.getElementById('motion-phase-indicator');
+    const replayBtn = document.getElementById('replay-falling-hook');
 
-    if (!stream || !hookAssembly || !targetCard) return;
+    if (!hook || !card || !assembly) return;
 
-    let timer: number | null = null;
-    let isRunning = false;
-
+    let isAnimating = false;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Fixed distance that aligns target card perfectly at center of viewport
-    const targetScrollDistance = -136; 
+    function resetStage() {
+      hook.style.transition = 'none';
+      hook.style.transform = 'translateY(-240px)';
 
-    function resetToIdle() {
-      if (timer) clearTimeout(timer);
-      stream.style.transition = 'none';
-      stream.style.transform = 'translateY(0px)';
-      hookAssembly.style.transition = 'none';
-      hookAssembly.style.transform = 'translateY(-130%)';
+      card.style.transition = 'none';
+      card.style.transform = 'translateY(0) rotate(0deg)';
+      card.style.boxShadow = '0 12px 28px -6px rgba(0, 0, 0, 0.45), 0 4px 10px -2px rgba(0, 0, 0, 0.25)';
 
-      targetCard.style.transition = 'none';
-      targetCard.style.transform = 'none';
-      targetCard.style.borderColor = 'var(--border-subtle)';
-      targetCard.style.boxShadow = 'none';
+      assembly.style.transition = 'none';
+      assembly.style.transform = 'translateY(0)';
 
-      if (hookBadge) hookBadge.style.opacity = '0';
-      if (snagPoint) {
-        snagPoint.style.opacity = '0';
-        snagPoint.style.transform = 'translate(-50%, 0) scale(0.5)';
+      if (statusPill) {
+        statusPill.className = 'text-[9px] font-mono font-semibold px-2 py-0.5 rounded-full bg-zinc-100 text-zinc-600 transition-colors duration-300';
+        statusPill.innerText = 'FEED';
       }
-      if (hookSpark) hookSpark.style.opacity = '0';
-      if (banner) {
-        banner.style.opacity = '0';
-        banner.style.transform = 'translateY(12px)';
+      if (indicator) {
+        indicator.innerText = 'Natural Gravity';
       }
-      if (statusDot) {
-        statusDot.className = 'w-2 h-2 rounded-full bg-emerald-500 animate-pulse';
-      }
-      if (statusText) statusText.innerText = 'SCROLLING FEED';
     }
 
-    function runSequence() {
-      if (isRunning) return;
-      isRunning = true;
+    function playAnimation() {
+      if (isAnimating) return;
+      isAnimating = true;
 
-      resetToIdle();
+      resetStage();
 
       if (prefersReducedMotion) {
-        stream.style.transform = `translateY(${targetScrollDistance}px)`;
-        hookAssembly.style.transform = 'translateY(116px)';
-        targetCard.style.borderColor = '#ff4500';
-        if (hookBadge) hookBadge.style.opacity = '1';
-        if (banner) {
-          banner.style.opacity = '1';
-          banner.style.transform = 'translateY(0)';
+        // Immediate static caught state for reduced motion accessibility
+        hook.style.transform = 'translateY(22px)';
+        card.style.transform = 'translateY(-8px)';
+        if (statusPill) {
+          statusPill.className = 'text-[9px] font-mono font-semibold px-2 py-0.5 rounded-full bg-zinc-900 text-white';
+          statusPill.innerText = 'HOOKED';
         }
-        isRunning = false;
+        if (indicator) indicator.innerText = 'Attention Caught';
+        isAnimating = false;
         return;
       }
 
-      // 1. Smooth upward scroll
-      void stream.offsetHeight;
-      stream.style.transition = 'transform 2.0s cubic-bezier(0.22, 1, 0.36, 1)';
-      stream.style.transform = `translateY(${targetScrollDistance}px)`;
+      // Step 1: Gentle initial hover of the floating card
+      void hook.offsetHeight;
+      card.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+      card.style.transform = 'translateY(2px)';
 
-      // 2. Hook drops smoothly from above to meet the target card
+      // Step 2: Realistic metallic silver hook enters from top with natural gravity easing
       setTimeout(() => {
-        hookAssembly.style.transition = 'transform 0.55s cubic-bezier(0.25, 1.25, 0.5, 1)';
-        hookAssembly.style.transform = 'translateY(114px)';
-      }, 1000);
+        if (indicator) indicator.innerText = 'Falling Hook...';
+        // Smooth natural fall from -240px down to catch the top edge of the card
+        hook.style.transition = 'transform 0.85s cubic-bezier(0.33, 1, 0.68, 1)';
+        hook.style.transform = 'translateY(22px)';
+      }, 400);
 
-      // 3. Instant halt & latch at 1.55s
+      // Step 3: Hook catches the card and gently pulls it upward
       setTimeout(() => {
-        // Halt scroll firmly in place
-        stream.style.transition = 'none';
-        stream.style.transform = `translateY(${targetScrollDistance}px)`;
+        if (indicator) indicator.innerText = 'Tug & Catch';
 
-        // Highlight and lift card
-        targetCard.style.transition = 'all 0.3s cubic-bezier(0.2, 0.9, 0.3, 1.2)';
-        targetCard.style.transform = 'scale(1.03) translateY(-3px)';
-        targetCard.style.borderColor = '#ff4500';
-        targetCard.style.boxShadow = '0 12px 24px -6px rgba(255, 69, 0, 0.3), 0 0 0 1.5px #ff4500';
+        // Gentle upward pull on the card & hook assembly
+        assembly.style.transition = 'transform 0.45s cubic-bezier(0.25, 1, 0.5, 1)';
+        assembly.style.transform = 'translateY(-14px)';
 
-        if (hookBadge) hookBadge.style.opacity = '1';
-        if (snagPoint) {
-          snagPoint.style.opacity = '1';
-          snagPoint.style.transform = 'translate(-50%, 0) scale(1)';
+        // Subtle dynamic tilt as the hook catches the card
+        card.style.transition = 'transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.45s ease';
+        card.style.transform = 'rotate(-0.8deg)';
+        card.style.boxShadow = '0 20px 36px -8px rgba(0, 0, 0, 0.6), 0 8px 16px -4px rgba(0, 0, 0, 0.35)';
+
+        if (statusPill) {
+          statusPill.className = 'text-[9px] font-mono font-bold px-2 py-0.5 rounded-full bg-zinc-900 text-white transition-colors duration-300';
+          statusPill.innerText = 'HOOKED';
         }
-        if (hookSpark) hookSpark.style.opacity = '1';
+      }, 1250);
 
-        if (statusDot) {
-          statusDot.className = 'w-2 h-2 rounded-full bg-[#ff4500]';
-        }
-        if (statusText) statusText.innerText = 'SCROLL FROZEN';
+      // Step 4: Let everything settle smoothly into place
+      setTimeout(() => {
+        if (indicator) indicator.innerText = 'Settled • Attention Held';
 
-        if (banner) {
-          banner.style.opacity = '1';
-          banner.style.transform = 'translateY(0)';
-        }
-      }, 1550);
+        assembly.style.transition = 'transform 0.65s cubic-bezier(0.34, 1.3, 0.64, 1)';
+        assembly.style.transform = 'translateY(-8px)';
 
-      // 4. Hold captured moment for 4.2s, then loop seamlessly
-      timer = window.setTimeout(() => {
-        isRunning = false;
-        runSequence();
-      }, 5800);
+        card.style.transition = 'transform 0.65s cubic-bezier(0.34, 1.3, 0.64, 1)';
+        card.style.transform = 'rotate(0deg)';
+
+        isAnimating = false;
+      }, 1700);
     }
 
-    // Initialize
-    runSequence();
+    // Play once on initial page load
+    playAnimation();
 
-    // Replay button listener
+    // Replay button listener (for testing & user inspection)
     replayBtn?.addEventListener('click', () => {
-      isRunning = false;
-      runSequence();
+      isAnimating = false;
+      playAnimation();
     });
   }
 
-  initHeroHookAnimation();
-  document.addEventListener('astro:after-swap', initHeroHookAnimation);
+  initFallingHookAnimation();
+  document.addEventListener('astro:after-swap', initFallingHookAnimation);
 </script>
