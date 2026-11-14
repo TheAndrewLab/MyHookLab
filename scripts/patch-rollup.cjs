@@ -11,3 +11,4 @@ if (fs.existsSync(nativeJsPath)) {
     console.log('[patch-rollup] Patched rollup native fallback to @rollup/wasm-node/dist/native.js');
   }
 }
+
