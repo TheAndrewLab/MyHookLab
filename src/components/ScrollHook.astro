@@ -1,104 +1,109 @@
 ---
 // ScrollHook.astro
-// Minimalist, premium metallic silver hook that smoothly descends on the left side
-// simultaneously as the user scrolls down through the page after the hero animation.
+// Large, centered, subtly faded metallic silver hook that smoothly descends through
+// the center of the site simultaneously as the user scrolls down after the hero section.
 ---
 
 <div
   id="scroll-hook-container"
-  class="fixed left-2 sm:left-4 md:left-6 lg:left-8 top-0 bottom-0 z-40 pointer-events-none select-none opacity-0 transition-opacity duration-500 ease-out flex flex-col items-center"
+  class="fixed left-1/2 -translate-x-1/2 top-0 bottom-0 z-20 pointer-events-none select-none opacity-0 transition-opacity duration-700 ease-out flex flex-col items-center"
   aria-hidden="true"
 >
-  <!-- Fine Steel Suspension Line (Extends from top of viewport down to the hook) -->
-  <div
-    id="scroll-hook-line"
-    class="w-[1.5px] bg-gradient-to-b from-transparent via-zinc-400 to-zinc-300 dark:via-zinc-500 dark:to-zinc-200 opacity-80 will-change-[height]"
-    style="height: 0px;"
-  ></div>
+  <!-- Subtle Faded Wrapper (Perfect balance: neither too faint nor too prominent) -->
+  <div class="relative flex flex-col items-center opacity-[0.20] dark:opacity-[0.24] transition-opacity">
+    
+    <!-- Central Suspension Trace Line (Descends from top of screen to the hook eyelet) -->
+    <div
+      id="scroll-hook-line"
+      class="w-[2px] bg-gradient-to-b from-transparent via-zinc-400 to-zinc-300 dark:via-zinc-500 dark:to-zinc-200 opacity-90 will-change-[height]"
+      style="height: 0px;"
+    ></div>
 
-  <!-- Miniature Realistic Metallic Silver Hook -->
-  <div
-    id="scroll-hook-element"
-    class="relative -mt-1 flex flex-col items-center will-change-transform"
-    style="transform: translateY(0px) rotate(0deg);"
-  >
-    <!-- Micro orange bead connection accent -->
-    <div class="w-1.5 h-1.5 rounded-full bg-[#ff4500] shadow-[0_0_6px_rgba(255,69,0,0.8)] mb-[1px]"></div>
-
-    <!-- Scaled Realistic Metallic Silver Hook Vector -->
-    <svg
-      class="w-5 h-8 sm:w-6 sm:h-9 filter drop-shadow-[0_6px_12px_rgba(0,0,0,0.45)] dark:drop-shadow-[0_6px_14px_rgba(0,0,0,0.7)]"
-      viewBox="0 0 54 80"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+    <!-- Large Metallic Silver Hook Element -->
+    <div
+      id="scroll-hook-element"
+      class="relative -mt-1 flex flex-col items-center will-change-transform"
+      style="transform: translateY(0px) rotate(0deg);"
     >
-      <defs>
-        <!-- Linear Metallic Gradient for Cylindrical Steel Shank -->
-        <linearGradient id="scrollSilverShankGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#4B5563" />
-          <stop offset="25%" stop-color="#9CA3AF" />
-          <stop offset="45%" stop-color="#FFFFFF" />
-          <stop offset="70%" stop-color="#D1D5DB" />
-          <stop offset="100%" stop-color="#374151" />
-        </linearGradient>
+      <!-- Micro Orange Connection Bead -->
+      <div class="w-2.5 h-2.5 rounded-full bg-[#ff4500] shadow-[0_0_10px_rgba(255,69,0,0.8)] mb-[1px]"></div>
 
-        <!-- Radial Specular Reflection for the Circular Eyelet -->
-        <radialGradient id="scrollSilverEyeletGrad" cx="35%" cy="35%" r="65%">
-          <stop offset="0%" stop-color="#FFFFFF" />
-          <stop offset="40%" stop-color="#D1D5DB" />
-          <stop offset="80%" stop-color="#6B7280" />
-          <stop offset="100%" stop-color="#1F2937" />
-        </radialGradient>
+      <!-- Large Realistic Metallic Silver Hook Vector -->
+      <svg
+        class="w-20 h-32 sm:w-24 sm:h-38 md:w-28 md:h-44 filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.35)] dark:drop-shadow-[0_16px_32px_rgba(0,0,0,0.65)]"
+        viewBox="0 0 54 80"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <!-- Cylindrical Steel Shank Gradient -->
+          <linearGradient id="centerSilverShankGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#4B5563" />
+            <stop offset="25%" stop-color="#9CA3AF" />
+            <stop offset="45%" stop-color="#FFFFFF" />
+            <stop offset="70%" stop-color="#D1D5DB" />
+            <stop offset="100%" stop-color="#374151" />
+          </linearGradient>
 
-        <!-- Subtle Point Gradient -->
-        <linearGradient id="scrollSilverPointGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#FFFFFF" />
-          <stop offset="50%" stop-color="#E5E7EB" />
-          <stop offset="100%" stop-color="#4B5563" />
-        </linearGradient>
-      </defs>
+          <!-- Radial Specular Reflection for the Eyelet -->
+          <radialGradient id="centerSilverEyeletGrad" cx="35%" cy="35%" r="65%">
+            <stop offset="0%" stop-color="#FFFFFF" />
+            <stop offset="40%" stop-color="#D1D5DB" />
+            <stop offset="80%" stop-color="#6B7280" />
+            <stop offset="100%" stop-color="#1F2937" />
+          </radialGradient>
 
-      <!-- Top Ring Eyelet (Outer) -->
-      <circle cx="27" cy="8" r="5" fill="url(#scrollSilverEyeletGrad)" stroke="#374151" stroke-width="1" />
-      <!-- Top Ring Eyelet (Inner Hole) -->
-      <circle cx="27" cy="8" r="2.2" fill="#18181b" />
+          <!-- Catch Barb Gradient -->
+          <linearGradient id="centerSilverPointGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF" />
+            <stop offset="50%" stop-color="#E5E7EB" />
+            <stop offset="100%" stop-color="#4B5563" />
+          </linearGradient>
+        </defs>
 
-      <!-- Main Vertical Cylindrical Shank -->
-      <path
-        d="M25 12.5 H29 V48 H25 Z"
-        fill="url(#scrollSilverShankGrad)"
-      />
+        <!-- Top Ring Eyelet (Outer) -->
+        <circle cx="27" cy="8" r="5" fill="url(#centerSilverEyeletGrad)" stroke="#374151" stroke-width="1" />
+        <!-- Top Ring Eyelet (Inner Hole) -->
+        <circle cx="27" cy="8" r="2.2" fill="#18181b" />
 
-      <!-- Sweeping Metallic Bend & Razor Sharp Barb -->
-      <path
-        d="M29 47.5 
-           C29 64, 11 64, 11 50 
-           C11 41, 19 40, 20.5 45
-           L18.5 48.5
-           L16 46
-           C15 44, 14 44.5, 14 50
-           C14 59.5, 26 59.5, 26 47.5
-           Z"
-        fill="url(#scrollSilverPointGrad)"
-        stroke="#1F2937"
-        stroke-width="0.75"
-        stroke-linejoin="round"
-      />
+        <!-- Main Vertical Cylindrical Shank -->
+        <path
+          d="M25 12.5 H29 V48 H25 Z"
+          fill="url(#centerSilverShankGrad)"
+        />
 
-      <!-- Specular Chrome Ridge Highlight on Outer Spine -->
-      <path
-        d="M28 14 V48 C28 62, 12.5 62, 12.5 50"
-        stroke="#FFFFFF"
-        stroke-width="0.8"
-        stroke-linecap="round"
-        opacity="0.85"
-      />
-    </svg>
+        <!-- Sweeping Metallic Bend & Sharp Barb -->
+        <path
+          d="M29 47.5 
+             C29 64, 11 64, 11 50 
+             C11 41, 19 40, 20.5 45
+             L18.5 48.5
+             L16 46
+             C15 44, 14 44.5, 14 50
+             C14 59.5, 26 59.5, 26 47.5
+             Z"
+          fill="url(#centerSilverPointGrad)"
+          stroke="#1F2937"
+          stroke-width="0.75"
+          stroke-linejoin="round"
+        />
+
+        <!-- Specular Chrome Ridge Highlight on Spine -->
+        <path
+          d="M28 14 V48 C28 62, 12.5 62, 12.5 50"
+          stroke="#FFFFFF"
+          stroke-width="0.9"
+          stroke-linecap="round"
+          opacity="0.85"
+        />
+      </svg>
+    </div>
+
   </div>
 </div>
 
 <script>
-  function initScrollHook() {
+  function initCenterScrollHook() {
     const container = document.getElementById('scroll-hook-container');
     const line = document.getElementById('scroll-hook-line');
     const hook = document.getElementById('scroll-hook-element');
@@ -106,12 +111,11 @@
 
     if (!container || !line || !hook) return;
 
-    let currentY = 90;
-    let targetY = 90;
+    let currentY = 100;
+    let targetY = 100;
     let currentTilt = 0;
     let targetTilt = 0;
     let lastScrollY = window.scrollY;
-    let isTicking = false;
     let isVisible = false;
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -121,13 +125,13 @@
       const heroHeight = hero ? hero.offsetHeight : 650;
       const heroTop = hero ? hero.offsetTop : 0;
       
-      // Threshold: only start descending once scrolling down past the hero section
-      const triggerStart = heroTop + heroHeight * 0.45;
+      // Threshold: starts descending as the user scrolls past the hero animation
+      const triggerStart = heroTop + heroHeight * 0.5;
       const docHeight = document.documentElement.scrollHeight;
       const winHeight = window.innerHeight;
       const maxScroll = Math.max(1, docHeight - winHeight - triggerStart);
 
-      // Determine visibility
+      // Fade in smoothly when scrolled down past the hero; fade out when back in hero
       if (scrollY > triggerStart) {
         if (!isVisible) {
           container.style.opacity = '1';
@@ -140,24 +144,24 @@
         }
       }
 
-      // Vertical range within the viewport (between header padding and bottom edge)
-      const topOffset = 88; // Just below sticky navigation
-      const bottomMargin = 72; // Above viewport bottom
-      const availableRange = Math.max(80, winHeight - topOffset - bottomMargin);
+      // Vertical range within the viewport (centered between header and bottom)
+      const topOffset = 95;
+      const bottomMargin = 140; // Accommodate larger hook height
+      const availableRange = Math.max(100, winHeight - topOffset - bottomMargin);
 
-      // Progress from 0 (at hero end) to 1 (at footer end)
+      // Normalized scroll progress [0, 1] through the post-hero content
       const scrollProgress = Math.min(1, Math.max(0, (scrollY - triggerStart) / maxScroll));
       targetY = topOffset + scrollProgress * availableRange;
 
-      // Subtle dynamic inertia tilt based on scroll velocity & direction
+      // Subtle dynamic inertia tilt during scrolling
       const deltaScroll = scrollY - lastScrollY;
       lastScrollY = scrollY;
 
       if (!prefersReducedMotion) {
         if (deltaScroll > 2) {
-          targetTilt = Math.min(6, deltaScroll * 0.25); // Gentle forward tilt while descending
+          targetTilt = Math.min(3.5, deltaScroll * 0.15); // Gentle tilt while descending
         } else if (deltaScroll < -2) {
-          targetTilt = Math.max(-6, deltaScroll * 0.25); // Gentle backward tilt while ascending
+          targetTilt = Math.max(-3.5, deltaScroll * 0.15); // Gentle tilt while ascending
         } else {
           targetTilt = 0;
         }
@@ -170,23 +174,20 @@
           currentY = targetY;
           currentTilt = 0;
         } else {
-          // Smooth fluid physics lerping (18% step per frame)
-          currentY += (targetY - currentY) * 0.18;
-          currentTilt += (targetTilt - currentTilt) * 0.12;
+          // Smooth fluid physics lerping
+          currentY += (targetY - currentY) * 0.15;
+          currentTilt += (targetTilt - currentTilt) * 0.10;
         }
 
-        // Apply updated line length & hook position
+        // Apply updated suspension line length and hook position
         line.style.height = `${Math.max(0, currentY)}px`;
         hook.style.transform = `rotate(${currentTilt.toFixed(2)}deg)`;
       }
 
-      // Decelerate tilt towards 0 when scrolling stops
-      targetTilt *= 0.85;
-
+      targetTilt *= 0.88;
       requestAnimationFrame(renderLoop);
     }
 
-    // Scroll listener with requestAnimationFrame throttling
     window.addEventListener(
       'scroll',
       () => {
@@ -203,11 +204,10 @@
       { passive: true }
     );
 
-    // Initial check and kick off render loop
     updateMetrics();
     requestAnimationFrame(renderLoop);
   }
 
-  initScrollHook();
-  document.addEventListener('astro:after-swap', initScrollHook);
+  initCenterScrollHook();
+  document.addEventListener('astro:after-swap', initCenterScrollHook);
 </script>
