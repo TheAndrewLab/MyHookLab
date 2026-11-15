@@ -575,7 +575,28 @@
       };
 
       try {
-        // Persist enquiry safely in local session storage
+        // Dispatch to secure backend endpoint (/api/enquiry)
+        let backendSucceeded = false;
+        try {
+          const res = await fetch('/api/enquiry', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json',
+            },
+            body: JSON.stringify(payload),
+          });
+
+          if (res.ok) {
+            backendSucceeded = true;
+          } else {
+            console.warn('Backend responded with status:', res.status);
+          }
+        } catch (fetchErr) {
+          console.warn('Backend endpoint unavailable or offline:', fetchErr);
+        }
+
+        // Persist enquiry safely in local storage
         try {
           const storedEnquiries = JSON.parse(localStorage.getItem('myhooklab_enquiries') || '[]');
           storedEnquiries.push(payload);
@@ -583,9 +604,6 @@
         } catch (e) {
           // Ignore localStorage quotas in restricted sandboxes
         }
-
-        // Realistic asynchronous submission delay to prevent accidental multi-clicks
-        await new Promise((resolve) => setTimeout(resolve, 650));
 
         // Populate Success Notice
         if (successName) successName.textContent = payload.name;
