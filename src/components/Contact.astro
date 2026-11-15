@@ -1,151 +1,358 @@
 ---
 // Contact.astro
+// Low-Cognitive-Load, Selection-Driven Client Enquiry Form
 ---
 
 <section id="contact" class="py-16 sm:py-24 md:py-32 border-t border-subtle bg-surface-1/40 relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-3xl mx-auto">
+    <div class="max-w-4xl mx-auto">
       
       <!-- Section Header -->
       <div class="text-center mb-12 sm:mb-16">
         <div class="inline-flex items-center gap-3 mb-4">
           <span class="w-6 h-[2px] bg-[#ff4500]"></span>
-          <span class="text-xs font-semibold tracking-widest text-dim uppercase">Get In Touch</span>
+          <span class="text-xs font-semibold tracking-widest text-dim uppercase">Client Enquiry</span>
           <span class="w-6 h-[2px] bg-[#ff4500]"></span>
         </div>
         <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-main leading-tight mb-4">
-          Let's Create Something People Notice.
+          Let's Make Your Brand Impossible to Ignore.
         </h2>
-        <p class="text-base sm:text-lg text-muted font-normal max-w-xl mx-auto leading-relaxed">
-          Tell us about your offer, audience, or message. We will explore how to craft the hook that stops your market in their tracks.
+        <p class="text-base sm:text-lg text-muted font-normal max-w-2xl mx-auto leading-relaxed">
+          Tell us what you do, who you want to reach, and what's holding your brand back. Let's turn that into something people notice.
         </p>
       </div>
 
       <!-- Contact Form Container -->
-      <div class="bg-surface-card rounded-2xl p-6 sm:p-10 border border-subtle shadow-xl shadow-black/[0.02] dark:shadow-black/20">
+      <div class="bg-surface-card rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-12 border border-subtle shadow-xl shadow-black/[0.02] dark:shadow-black/20">
         
         <!-- Form State Message: Success Notice -->
-        <div id="contact-success" class="hidden text-center py-10 px-4 space-y-4">
-          <div class="w-14 h-14 rounded-full bg-[#ff4500]/10 text-[#ff4500] border border-[#ff4500]/30 mx-auto flex items-center justify-center">
-            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+        <div id="contact-success" class="hidden text-center py-8 sm:py-12 px-2 sm:px-4 space-y-6">
+          <div class="w-16 h-16 rounded-full bg-[#ff4500]/10 text-[#ff4500] border border-[#ff4500]/30 mx-auto flex items-center justify-center">
+            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-main">Your Request Has Been Prepared</h3>
-          <p class="text-sm sm:text-base text-muted max-w-md mx-auto leading-relaxed">
-            Thank you, <span id="success-name" class="font-semibold text-main">there</span>. We've captured your project details and attention challenge. Since this demo does not connect to an external mailing server, your request is safely stored in your session.
+          
+          <div class="space-y-2">
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-main">
+              Your Request Has Been Received.
+            </h3>
+            <p class="text-sm sm:text-base text-muted max-w-lg mx-auto leading-relaxed">
+              Thank you, <span id="success-name" class="font-bold text-main">there</span>. We've captured your brand details and attention challenge.
+            </p>
+          </div>
+
+          <!-- Submitted Summary Card -->
+          <div class="max-w-xl mx-auto bg-surface-1 rounded-2xl p-5 sm:p-6 border border-subtle text-left space-y-3.5 text-xs sm:text-sm">
+            <div class="text-[11px] font-bold uppercase tracking-wider text-dim border-b border-subtle pb-2">
+              Submission Summary
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+              <div>
+                <span class="text-muted block text-[11px]">Business Type:</span>
+                <span id="summary-business" class="font-semibold text-main"></span>
+              </div>
+              <div>
+                <span class="text-muted block text-[11px]">Primary Goal:</span>
+                <span id="summary-goal" class="font-semibold text-main"></span>
+              </div>
+              <div>
+                <span class="text-muted block text-[11px]">Attention Focus:</span>
+                <span id="summary-focus" class="font-semibold text-main"></span>
+              </div>
+              <div>
+                <span class="text-muted block text-[11px]">Current Bottleneck:</span>
+                <span id="summary-challenge" class="font-semibold text-main"></span>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-xs sm:text-sm text-muted max-w-md mx-auto">
+            Our lab team is reviewing your profile. Expect a direct, tailored response to <span id="success-email" class="font-semibold text-main"></span> within 24 business hours.
           </p>
-          <div class="pt-4">
+
+          <div class="pt-2">
             <button
               type="button"
               id="reset-form-btn"
-              class="inline-flex items-center justify-center px-6 py-2.5 text-xs font-semibold uppercase tracking-wider rounded-full bg-surface-1 hover:bg-surface-2 text-main border border-subtle transition-colors"
+              class="inline-flex items-center justify-center px-7 py-3 text-xs font-semibold uppercase tracking-wider rounded-full bg-surface-1 hover:bg-surface-2 text-main border border-subtle transition-all duration-200 cursor-pointer hover:border-zinc-400 dark:hover:border-zinc-600"
             >
-              Submit Another Inquiry
+              Submit Another Request
             </button>
           </div>
         </div>
 
-        <!-- Active Form -->
-        <form id="hook-contact-form" class="space-y-6" novalidate>
+        <!-- Active Low-Cognitive-Load Enquiry Form -->
+        <form id="hook-enquiry-form" class="space-y-10" novalidate>
           
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <!-- Name Field -->
+          <!-- SECTION 1: Contact Details -->
+          <div class="space-y-4">
+            <div class="flex items-center gap-2 pb-1 border-b border-subtle">
+              <span class="w-5 h-5 rounded-full bg-[#ff4500]/10 text-[#ff4500] text-xs font-bold flex items-center justify-center">1</span>
+              <h3 class="text-sm font-bold uppercase tracking-wider text-main">Your Contact Details</h3>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
+              <!-- Field 1: Your Name (Required) -->
+              <div>
+                <label for="contact-name" class="block text-xs font-semibold text-main mb-2">
+                  Your Name <span class="text-[#ff4500]">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  required
+                  placeholder="Alex Morgan"
+                  class="w-full px-4 py-3 rounded-xl bg-surface-1 border border-subtle text-main placeholder:text-zinc-400 focus:outline-none focus:border-[#ff4500] focus:ring-1 focus:ring-[#ff4500] transition-colors text-base sm:text-sm font-['Poppins',sans-serif]"
+                />
+                <span id="name-error" class="hidden text-xs text-rose-500 mt-1.5 font-medium flex items-center gap-1">
+                  <svg class="w-3.5 h-3.5 inline shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  Please enter your name
+                </span>
+              </div>
+
+              <!-- Field 2: Email Address (Required) -->
+              <div>
+                <label for="contact-email" class="block text-xs font-semibold text-main mb-2">
+                  Email Address <span class="text-[#ff4500]">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  required
+                  placeholder="alex@company.com"
+                  class="w-full px-4 py-3 rounded-xl bg-surface-1 border border-subtle text-main placeholder:text-zinc-400 focus:outline-none focus:border-[#ff4500] focus:ring-1 focus:ring-[#ff4500] transition-colors text-base sm:text-sm font-['Poppins',sans-serif]"
+                />
+                <span id="email-error" class="hidden text-xs text-rose-500 mt-1.5 font-medium flex items-center gap-1">
+                  <svg class="w-3.5 h-3.5 inline shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  Please enter a valid email address
+                </span>
+              </div>
+            </div>
+
+            <!-- Field 3: Business or Brand Name (Optional) -->
             <div>
-              <label for="contact-name" class="block text-xs font-bold uppercase tracking-wider text-main mb-2">
-                Your Name <span class="text-[#ff4500]">*</span>
+              <label for="contact-brand" class="block text-xs font-semibold text-main mb-2">
+                Business or Brand Name <span class="text-dim text-[11px] font-normal">(Optional)</span>
               </label>
               <input
                 type="text"
-                id="contact-name"
-                name="name"
-                required
-                placeholder="Alex Morgan"
+                id="contact-brand"
+                name="brand"
+                placeholder="e.g. Acme Studio / Personal Brand"
                 class="w-full px-4 py-3 rounded-xl bg-surface-1 border border-subtle text-main placeholder:text-zinc-400 focus:outline-none focus:border-[#ff4500] focus:ring-1 focus:ring-[#ff4500] transition-colors text-base sm:text-sm font-['Poppins',sans-serif]"
               />
-              <span id="name-error" class="hidden text-xs text-rose-500 mt-1.5 font-medium">Please enter your name</span>
-            </div>
-
-            <!-- Email Field -->
-            <div>
-              <label for="contact-email" class="block text-xs font-bold uppercase tracking-wider text-main mb-2">
-                Email Address <span class="text-[#ff4500]">*</span>
-              </label>
-              <input
-                type="email"
-                id="contact-email"
-                name="email"
-                required
-                placeholder="alex@company.com"
-                class="w-full px-4 py-3 rounded-xl bg-surface-1 border border-subtle text-main placeholder:text-zinc-400 focus:outline-none focus:border-[#ff4500] focus:ring-1 focus:ring-[#ff4500] transition-colors text-base sm:text-sm font-['Poppins',sans-serif]"
-              />
-              <span id="email-error" class="hidden text-xs text-rose-500 mt-1.5 font-medium">Please enter a valid email address</span>
             </div>
           </div>
 
-          <!-- Business or Brand Name -->
-          <div>
-            <label for="contact-brand" class="block text-xs font-bold uppercase tracking-wider text-main mb-2">
-              Business or Brand Name
-            </label>
-            <input
-              type="text"
-              id="contact-brand"
-              name="brand"
-              placeholder="e.g. Acme Studio / Personal Brand"
-              class="w-full px-4 py-3 rounded-xl bg-surface-1 border border-subtle text-main placeholder:text-zinc-400 focus:outline-none focus:border-[#ff4500] focus:ring-1 focus:ring-[#ff4500] transition-colors text-base sm:text-sm font-['Poppins',sans-serif]"
-            />
-          </div>
-
-          <!-- Attention Problem / Requirement -->
-          <div>
-            <label for="contact-need" class="block text-xs font-bold uppercase tracking-wider text-main mb-2">
-              What do you need help getting attention for? <span class="text-[#ff4500]">*</span>
-            </label>
-            <div class="mb-3">
-              <select
-                id="contact-category"
-                name="category"
-                class="w-full px-4 py-3 rounded-xl bg-surface-1 border border-subtle text-main focus:outline-none focus:border-[#ff4500] focus:ring-1 focus:ring-[#ff4500] transition-colors text-sm font-['Poppins',sans-serif]"
-              >
-                <option value="marketing">Marketing & Paid Ad Hooks</option>
-                <option value="social">Instagram & Social Media Scroll-Stoppers</option>
-                <option value="video">Video First-3-Seconds Openers</option>
-                <option value="landing">Website & Landing Page Headlines</option>
-                <option value="product">Product Positioning & Messaging</option>
-                <option value="branding">Personal Branding & Thought Leadership</option>
-                <option value="other">Other Attention Challenge</option>
-              </select>
+          <!-- SECTION 2: Field 4 - Business Description -->
+          <div class="space-y-3 pt-2">
+            <div class="flex items-center justify-between pb-1 border-b border-subtle">
+              <div class="flex items-center gap-2">
+                <span class="w-5 h-5 rounded-full bg-[#ff4500]/10 text-[#ff4500] text-xs font-bold flex items-center justify-center">2</span>
+                <label class="text-sm font-bold uppercase tracking-wider text-main">
+                  What best describes your business? <span class="text-[#ff4500]">*</span>
+                </label>
+              </div>
+              <span class="text-[11px] text-dim">Single choice</span>
             </div>
-            <textarea
-              id="contact-details"
-              name="details"
-              rows="4"
-              required
-              placeholder="Briefly describe what you're working on, who you want to reach, and where you're struggling to capture attention..."
-              class="w-full px-4 py-3 rounded-xl bg-surface-1 border border-subtle text-main placeholder:text-zinc-400 focus:outline-none focus:border-[#ff4500] focus:ring-1 focus:ring-[#ff4500] transition-colors text-base sm:text-sm font-['Poppins',sans-serif]"
-            ></textarea>
-            <span id="details-error" class="hidden text-xs text-rose-500 mt-1.5 font-medium">Please share what you need help getting attention for</span>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 pt-1" id="business-options-group">
+              {[
+                { value: "Personal Brand / Creator", label: "Personal Brand / Creator" },
+                { value: "Service-Based Business", label: "Service-Based Business" },
+                { value: "E-commerce / Product Brand", label: "E-commerce / Product Brand" },
+                { value: "Startup / New Business", label: "Startup / New Business" },
+                { value: "Agency / Marketing Company", label: "Agency / Marketing Company" },
+                { value: "Other", label: "Other" },
+              ].map((item) => (
+                <label class="selection-card group relative flex items-center gap-3 p-3.5 sm:p-4 rounded-xl border border-subtle bg-surface-1 hover:bg-surface-2 transition-all duration-150 cursor-pointer select-none text-left hover:border-zinc-400 dark:hover:border-zinc-600">
+                  <input
+                    type="radio"
+                    name="business_type"
+                    value={item.value}
+                    class="sr-only peer"
+                    required
+                  />
+                  <span class="w-4 h-4 rounded-full border border-zinc-300 dark:border-zinc-600 peer-checked:border-[#ff4500] peer-checked:bg-[#ff4500] flex items-center justify-center shrink-0 transition-colors">
+                    <span class="w-1.5 h-1.5 rounded-full bg-white opacity-0 peer-checked:opacity-100 transition-opacity"></span>
+                  </span>
+                  <span class="text-xs sm:text-sm font-medium text-main leading-snug">
+                    {item.label}
+                  </span>
+                </label>
+              ))}
+            </div>
+            <span id="business-error" class="hidden text-xs text-rose-500 mt-1 font-medium flex items-center gap-1">
+              <svg class="w-3.5 h-3.5 inline shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              Please select what best describes your business
+            </span>
           </div>
 
-          <!-- Submit Button -->
-          <div class="pt-2">
+          <!-- SECTION 3: Field 5 - What do you need help getting attention for? -->
+          <div class="space-y-3 pt-2">
+            <div class="flex items-center justify-between pb-1 border-b border-subtle">
+              <div class="flex items-center gap-2">
+                <span class="w-5 h-5 rounded-full bg-[#ff4500]/10 text-[#ff4500] text-xs font-bold flex items-center justify-center">3</span>
+                <label class="text-sm font-bold uppercase tracking-wider text-main">
+                  What do you need help getting attention for? <span class="text-[#ff4500]">*</span>
+                </label>
+              </div>
+              <span class="text-[11px] text-dim">Single choice</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1" id="focus-options-group">
+              {[
+                { value: "Marketing & Paid Ad Hooks", label: "Marketing & Paid Ad Hooks" },
+                { value: "Instagram & Social Media Scroll-Stoppers", label: "Instagram & Social Media Scroll-Stoppers" },
+                { value: "Video First-3-Seconds Openers", label: "Video First-3-Seconds Openers" },
+                { value: "Website & Landing Page Headlines", label: "Website & Landing Page Headlines" },
+                { value: "Product Positioning & Messaging", label: "Product Positioning & Messaging" },
+                { value: "Personal Branding & Thought Leadership", label: "Personal Branding & Thought Leadership" },
+                { value: "Other Attention Challenge", label: "Other Attention Challenge" },
+              ].map((item) => (
+                <label class="selection-card group relative flex items-center gap-3 p-3.5 sm:p-4 rounded-xl border border-subtle bg-surface-1 hover:bg-surface-2 transition-all duration-150 cursor-pointer select-none text-left hover:border-zinc-400 dark:hover:border-zinc-600">
+                  <input
+                    type="radio"
+                    name="attention_focus"
+                    value={item.value}
+                    class="sr-only peer"
+                    required
+                  />
+                  <span class="w-4 h-4 rounded-full border border-zinc-300 dark:border-zinc-600 peer-checked:border-[#ff4500] peer-checked:bg-[#ff4500] flex items-center justify-center shrink-0 transition-colors">
+                    <span class="w-1.5 h-1.5 rounded-full bg-white opacity-0 peer-checked:opacity-100 transition-opacity"></span>
+                  </span>
+                  <span class="text-xs sm:text-sm font-medium text-main leading-snug">
+                    {item.label}
+                  </span>
+                </label>
+              ))}
+            </div>
+            <span id="focus-error" class="hidden text-xs text-rose-500 mt-1 font-medium flex items-center gap-1">
+              <svg class="w-3.5 h-3.5 inline shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              Please select what you need help getting attention for
+            </span>
+          </div>
+
+          <!-- SECTION 4: Field 6 - What's your biggest challenge right now? -->
+          <div class="space-y-3 pt-2">
+            <div class="flex items-center justify-between pb-1 border-b border-subtle">
+              <div class="flex items-center gap-2">
+                <span class="w-5 h-5 rounded-full bg-[#ff4500]/10 text-[#ff4500] text-xs font-bold flex items-center justify-center">4</span>
+                <label class="text-sm font-bold uppercase tracking-wider text-main">
+                  What's your biggest challenge right now? <span class="text-[#ff4500]">*</span>
+                </label>
+              </div>
+              <span class="text-[11px] text-dim">Single choice</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1" id="challenge-options-group">
+              {[
+                { value: "People aren't noticing my brand.", label: "People aren't noticing my brand." },
+                { value: "People see my content but don't engage.", label: "People see my content but don't engage." },
+                { value: "I'm struggling to generate leads.", label: "I'm struggling to generate leads." },
+                { value: "I'm getting attention but not sales.", label: "I'm getting attention but not sales." },
+                { value: "I don't know how to communicate my value.", label: "I don't know how to communicate my value." },
+                { value: "I'm just getting started.", label: "I'm just getting started." },
+              ].map((item) => (
+                <label class="selection-card group relative flex items-center gap-3 p-3.5 sm:p-4 rounded-xl border border-subtle bg-surface-1 hover:bg-surface-2 transition-all duration-150 cursor-pointer select-none text-left hover:border-zinc-400 dark:hover:border-zinc-600">
+                  <input
+                    type="radio"
+                    name="biggest_challenge"
+                    value={item.value}
+                    class="sr-only peer"
+                    required
+                  />
+                  <span class="w-4 h-4 rounded-full border border-zinc-300 dark:border-zinc-600 peer-checked:border-[#ff4500] peer-checked:bg-[#ff4500] flex items-center justify-center shrink-0 transition-colors">
+                    <span class="w-1.5 h-1.5 rounded-full bg-white opacity-0 peer-checked:opacity-100 transition-opacity"></span>
+                  </span>
+                  <span class="text-xs sm:text-sm font-medium text-main leading-snug">
+                    {item.label}
+                  </span>
+                </label>
+              ))}
+            </div>
+            <span id="challenge-error" class="hidden text-xs text-rose-500 mt-1 font-medium flex items-center gap-1">
+              <svg class="w-3.5 h-3.5 inline shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              Please select your biggest challenge right now
+            </span>
+          </div>
+
+          <!-- SECTION 5: Field 7 - What's your primary goal? -->
+          <div class="space-y-3 pt-2">
+            <div class="flex items-center justify-between pb-1 border-b border-subtle">
+              <div class="flex items-center gap-2">
+                <span class="w-5 h-5 rounded-full bg-[#ff4500]/10 text-[#ff4500] text-xs font-bold flex items-center justify-center">5</span>
+                <label class="text-sm font-bold uppercase tracking-wider text-main">
+                  What's your primary goal? <span class="text-[#ff4500]">*</span>
+                </label>
+              </div>
+              <span class="text-[11px] text-dim">Single choice</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1" id="goal-options-group">
+              {[
+                { value: "Get more people to notice my brand.", label: "Get more people to notice my brand." },
+                { value: "Generate more enquiries and leads.", label: "Generate more enquiries and leads." },
+                { value: "Increase sales and conversions.", label: "Increase sales and conversions." },
+                { value: "Build an engaged audience.", label: "Build an engaged audience." },
+                { value: "Stand out from competitors.", label: "Stand out from competitors." },
+              ].map((item) => (
+                <label class="selection-card group relative flex items-center gap-3 p-3.5 sm:p-4 rounded-xl border border-subtle bg-surface-1 hover:bg-surface-2 transition-all duration-150 cursor-pointer select-none text-left hover:border-zinc-400 dark:hover:border-zinc-600">
+                  <input
+                    type="radio"
+                    name="primary_goal"
+                    value={item.value}
+                    class="sr-only peer"
+                    required
+                  />
+                  <span class="w-4 h-4 rounded-full border border-zinc-300 dark:border-zinc-600 peer-checked:border-[#ff4500] peer-checked:bg-[#ff4500] flex items-center justify-center shrink-0 transition-colors">
+                    <span class="w-1.5 h-1.5 rounded-full bg-white opacity-0 peer-checked:opacity-100 transition-opacity"></span>
+                  </span>
+                  <span class="text-xs sm:text-sm font-medium text-main leading-snug">
+                    {item.label}
+                  </span>
+                </label>
+              ))}
+            </div>
+            <span id="goal-error" class="hidden text-xs text-rose-500 mt-1 font-medium flex items-center gap-1">
+              <svg class="w-3.5 h-3.5 inline shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              Please select your primary goal
+            </span>
+          </div>
+
+          <!-- General Form Error Notification Banner -->
+          <div id="general-error" class="hidden p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-500 text-xs sm:text-sm font-medium flex items-center gap-2">
+            <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <span id="general-error-text">Please complete the required fields highlighted above before submitting.</span>
+          </div>
+
+          <!-- Submit Button & Transparency Policy -->
+          <div class="pt-4 space-y-4">
             <button
               type="submit"
               id="submit-btn"
-              class="w-full py-4 px-8 rounded-full bg-[#ff4500] text-white font-semibold text-sm tracking-wide hover:bg-[#e03d00] transition-all duration-200 shadow-lg shadow-[#ff4500]/25 hover:shadow-xl hover:shadow-[#ff4500]/35 flex items-center justify-center gap-2 cursor-pointer"
+              class="w-full py-4 px-8 rounded-full bg-[#ff4500] text-white font-semibold text-sm sm:text-base tracking-wide hover:bg-[#e03d00] transition-all duration-200 shadow-lg shadow-[#ff4500]/25 hover:shadow-xl hover:shadow-[#ff4500]/35 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed hover:-translate-y-0.5 active:translate-y-0 disabled:translate-y-0"
             >
-              <span>Submit Request</span>
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <span id="submit-btn-text">Submit Request</span>
+              <svg id="submit-btn-icon" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
+              <svg id="submit-btn-spinner" class="w-4 h-4 hidden animate-spin" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+              </svg>
             </button>
-          </div>
 
-          <!-- Transparency Notice -->
-          <p class="text-center text-xs text-dim">
-            Transparent lab policy: No spam. Direct response within 24 business hours.
-          </p>
+            <!-- Exact Lab Policy Notice -->
+            <p class="text-center text-xs text-dim leading-relaxed max-w-xl mx-auto">
+              Transparent lab policy: No spam. No unnecessary sales calls. Expect a direct response within 24 business hours.
+            </p>
+          </div>
 
         </form>
 
@@ -155,78 +362,293 @@
   </div>
 </section>
 
+<!-- Scoped Styles for Highlighted Selection Cards -->
+<style>
+  .selection-card {
+    transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .selection-card.is-selected {
+    border-color: #ff4500 !important;
+    background-color: rgba(255, 69, 0, 0.06) !important;
+    box-shadow: 0 1px 3px rgba(255, 69, 0, 0.12);
+  }
+  :global(.dark) .selection-card.is-selected {
+    background-color: rgba(255, 69, 0, 0.12) !important;
+  }
+  .selection-card.has-error {
+    border-color: rgb(244 63 94 / 0.7) !important;
+  }
+</style>
+
 <script>
-  function setupContactForm() {
-    const form = document.getElementById('hook-contact-form') as HTMLFormElement | null;
+  function setupEnquiryForm() {
+    const form = document.getElementById('hook-enquiry-form') as HTMLFormElement | null;
     const successBox = document.getElementById('contact-success');
     const successName = document.getElementById('success-name');
+    const successEmail = document.getElementById('success-email');
     const resetBtn = document.getElementById('reset-form-btn');
 
+    // Summary fields
+    const summaryBusiness = document.getElementById('summary-business');
+    const summaryGoal = document.getElementById('summary-goal');
+    const summaryFocus = document.getElementById('summary-focus');
+    const summaryChallenge = document.getElementById('summary-challenge');
+
+    // Text inputs
     const nameInput = document.getElementById('contact-name') as HTMLInputElement | null;
     const emailInput = document.getElementById('contact-email') as HTMLInputElement | null;
-    const detailsInput = document.getElementById('contact-details') as HTMLTextAreaElement | null;
+    const brandInput = document.getElementById('contact-brand') as HTMLInputElement | null;
 
+    // Error spans
     const nameError = document.getElementById('name-error');
     const emailError = document.getElementById('email-error');
-    const detailsError = document.getElementById('details-error');
+    const businessError = document.getElementById('business-error');
+    const focusError = document.getElementById('focus-error');
+    const challengeError = document.getElementById('challenge-error');
+    const goalError = document.getElementById('goal-error');
+    const generalError = document.getElementById('general-error');
+
+    // Button & Loading State
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+    const submitBtnText = document.getElementById('submit-btn-text');
+    const submitBtnIcon = document.getElementById('submit-btn-icon');
+    const submitBtnSpinner = document.getElementById('submit-btn-spinner');
 
     if (!form || !successBox) return;
 
-    form.addEventListener('submit', (e) => {
+    // Synchronize visual state for selection cards
+    const allRadioInputs = form.querySelectorAll<HTMLInputElement>('input[type="radio"]');
+    
+    function refreshSelectionCardStyles() {
+      allRadioInputs.forEach((radio) => {
+        const card = radio.closest('.selection-card');
+        if (card) {
+          if (radio.checked) {
+            card.classList.add('is-selected');
+            card.classList.remove('has-error');
+          } else {
+            card.classList.remove('is-selected');
+          }
+        }
+      });
+    }
+
+    // Attach change listeners to clear field-level errors as soon as selected
+    allRadioInputs.forEach((radio) => {
+      radio.addEventListener('change', () => {
+        refreshSelectionCardStyles();
+
+        // Clear error corresponding to this group
+        if (radio.name === 'business_type') businessError?.classList.add('hidden');
+        if (radio.name === 'attention_focus') focusError?.classList.add('hidden');
+        if (radio.name === 'biggest_challenge') challengeError?.classList.add('hidden');
+        if (radio.name === 'primary_goal') goalError?.classList.add('hidden');
+
+        // Check if all errors cleared
+        const anyVisibleError = form.querySelector('span:not(.hidden)[id$="-error"]');
+        if (!anyVisibleError) {
+          generalError?.classList.add('hidden');
+        }
+      });
+    });
+
+    nameInput?.addEventListener('input', () => {
+      if (nameInput.value.trim()) {
+        nameError?.classList.add('hidden');
+        nameInput.classList.remove('border-rose-500');
+      }
+    });
+
+    emailInput?.addEventListener('input', () => {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (emailInput.value.trim() && emailRegex.test(emailInput.value.trim())) {
+        emailError?.classList.add('hidden');
+        emailInput.classList.remove('border-rose-500');
+      }
+    });
+
+    // Form Submission Handler
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       let hasError = false;
+      let firstErrorElement: HTMLElement | null = null;
 
-      // Validate Name
-      if (!nameInput?.value.trim()) {
+      // 1. Validate Name
+      const nameVal = nameInput?.value.trim() || '';
+      if (!nameVal) {
         nameError?.classList.remove('hidden');
         nameInput?.classList.add('border-rose-500');
+        if (!firstErrorElement) firstErrorElement = nameInput;
         hasError = true;
       } else {
         nameError?.classList.add('hidden');
         nameInput?.classList.remove('border-rose-500');
       }
 
-      // Validate Email
+      // 2. Validate Email
+      const emailVal = emailInput?.value.trim() || '';
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailInput?.value.trim() || !emailRegex.test(emailInput.value.trim())) {
+      if (!emailVal || !emailRegex.test(emailVal)) {
         emailError?.classList.remove('hidden');
         emailInput?.classList.add('border-rose-500');
+        if (!firstErrorElement) firstErrorElement = emailInput;
         hasError = true;
       } else {
         emailError?.classList.add('hidden');
         emailInput?.classList.remove('border-rose-500');
       }
 
-      // Validate Details
-      if (!detailsInput?.value.trim()) {
-        detailsError?.classList.remove('hidden');
-        detailsInput?.classList.add('border-rose-500');
+      // 3. Validate Field 4: Business Description
+      const selectedBusiness = form.querySelector<HTMLInputElement>('input[name="business_type"]:checked');
+      if (!selectedBusiness) {
+        businessError?.classList.remove('hidden');
+        document.querySelectorAll('#business-options-group .selection-card').forEach(c => c.classList.add('has-error'));
+        if (!firstErrorElement) firstErrorElement = document.getElementById('business-options-group');
         hasError = true;
       } else {
-        detailsError?.classList.add('hidden');
-        detailsInput?.classList.remove('border-rose-500');
+        businessError?.classList.add('hidden');
+        document.querySelectorAll('#business-options-group .selection-card').forEach(c => c.classList.remove('has-error'));
       }
 
-      if (hasError) return;
-
-      // Valid: Display confirmation with name
-      if (successName && nameInput) {
-        successName.textContent = nameInput.value.trim();
+      // 4. Validate Field 5: Attention Focus
+      const selectedFocus = form.querySelector<HTMLInputElement>('input[name="attention_focus"]:checked');
+      if (!selectedFocus) {
+        focusError?.classList.remove('hidden');
+        document.querySelectorAll('#focus-options-group .selection-card').forEach(c => c.classList.add('has-error'));
+        if (!firstErrorElement) firstErrorElement = document.getElementById('focus-options-group');
+        hasError = true;
+      } else {
+        focusError?.classList.add('hidden');
+        document.querySelectorAll('#focus-options-group .selection-card').forEach(c => c.classList.remove('has-error'));
       }
 
-      form.classList.add('hidden');
-      successBox.classList.remove('hidden');
+      // 5. Validate Field 6: Biggest Challenge
+      const selectedChallenge = form.querySelector<HTMLInputElement>('input[name="biggest_challenge"]:checked');
+      if (!selectedChallenge) {
+        challengeError?.classList.remove('hidden');
+        document.querySelectorAll('#challenge-options-group .selection-card').forEach(c => c.classList.add('has-error'));
+        if (!firstErrorElement) firstErrorElement = document.getElementById('challenge-options-group');
+        hasError = true;
+      } else {
+        challengeError?.classList.add('hidden');
+        document.querySelectorAll('#challenge-options-group .selection-card').forEach(c => c.classList.remove('has-error'));
+      }
+
+      // 6. Validate Field 7: Primary Goal
+      const selectedGoal = form.querySelector<HTMLInputElement>('input[name="primary_goal"]:checked');
+      if (!selectedGoal) {
+        goalError?.classList.remove('hidden');
+        document.querySelectorAll('#goal-options-group .selection-card').forEach(c => c.classList.add('has-error'));
+        if (!firstErrorElement) firstErrorElement = document.getElementById('goal-options-group');
+        hasError = true;
+      } else {
+        goalError?.classList.add('hidden');
+        document.querySelectorAll('#goal-options-group .selection-card').forEach(c => c.classList.remove('has-error'));
+      }
+
+      if (hasError) {
+        generalError?.classList.remove('hidden');
+        firstErrorElement?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      generalError?.classList.add('hidden');
+
+      // Prevent duplicate submissions & show loading feedback
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        if (submitBtnText) submitBtnText.textContent = 'Processing Request...';
+        submitBtnIcon?.classList.add('hidden');
+        submitBtnSpinner?.classList.remove('hidden');
+      }
+
+      const payload = {
+        name: nameVal,
+        email: emailVal,
+        brand: brandInput?.value.trim() || '',
+        businessType: selectedBusiness?.value || '',
+        attentionFocus: selectedFocus?.value || '',
+        biggestChallenge: selectedChallenge?.value || '',
+        primaryGoal: selectedGoal?.value || '',
+        timestamp: new Date().toISOString(),
+      };
+
+      try {
+        // Persist enquiry safely in local session storage
+        try {
+          const storedEnquiries = JSON.parse(localStorage.getItem('myhooklab_enquiries') || '[]');
+          storedEnquiries.push(payload);
+          localStorage.setItem('myhooklab_enquiries', JSON.stringify(storedEnquiries));
+        } catch (e) {
+          // Ignore localStorage quotas in restricted sandboxes
+        }
+
+        // Realistic asynchronous submission delay to prevent accidental multi-clicks
+        await new Promise((resolve) => setTimeout(resolve, 650));
+
+        // Populate Success Notice
+        if (successName) successName.textContent = payload.name;
+        if (successEmail) successEmail.textContent = payload.email;
+        if (summaryBusiness) summaryBusiness.textContent = payload.businessType;
+        if (summaryGoal) summaryGoal.textContent = payload.primaryGoal;
+        if (summaryFocus) summaryFocus.textContent = payload.attentionFocus;
+        if (summaryChallenge) summaryChallenge.textContent = payload.biggestChallenge;
+
+        // Transition form to success view
+        form.classList.add('hidden');
+        successBox.classList.remove('hidden');
+
+        // Smooth scroll to top of confirmation card
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      } catch (err) {
+        generalError?.classList.remove('hidden');
+        const errText = document.getElementById('general-error-text');
+        if (errText) errText.textContent = 'Submission encountered a temporary issue. Please try again.';
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          if (submitBtnText) submitBtnText.textContent = 'Submit Request';
+          submitBtnIcon?.classList.remove('hidden');
+          submitBtnSpinner?.classList.add('hidden');
+        }
+      }
     });
 
+    // Reset Form Handler
     resetBtn?.addEventListener('click', () => {
       form.reset();
+      refreshSelectionCardStyles();
+      
+      // Hide all errors
+      nameError?.classList.add('hidden');
+      emailError?.classList.add('hidden');
+      businessError?.classList.add('hidden');
+      focusError?.classList.add('hidden');
+      challengeError?.classList.add('hidden');
+      goalError?.classList.add('hidden');
+      generalError?.classList.add('hidden');
+      
+      nameInput?.classList.remove('border-rose-500');
+      emailInput?.classList.remove('border-rose-500');
+      document.querySelectorAll('.selection-card').forEach(c => c.classList.remove('has-error', 'is-selected'));
+
       form.classList.remove('hidden');
       successBox.classList.add('hidden');
+
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     });
+
+    // Initial sync
+    refreshSelectionCardStyles();
   }
 
-  setupContactForm();
-  document.addEventListener('astro:after-swap', setupContactForm);
+  setupEnquiryForm();
+  document.addEventListener('astro:after-swap', setupEnquiryForm);
 </script>
-
